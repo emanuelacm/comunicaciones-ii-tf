@@ -900,15 +900,250 @@ Esto se debe a que el software tiene en cuenta otros parámetros que no aparecen
 
 \section{Red de acceso con radioenlace}
 
+\subsection{Determinación de la tasa de transferencia necesaria y cálculo de los accesos}
+
+Del estudio socioeconómico realizado sobre la localidad de Leandro N. Alem se obtuvo que 83 hogares del total de la población serán potenciales clientes del servicio brindado. 
+También se obtuvo como conclusión que 25 clientes optarán por el pack básico, 44 clientes utilizarán el pack intermedio y 14 clientes el pack premium. 
+En la Tabla~1 se observa un resumen de los valores más importantes a tener en cuenta.
+
+
+\begin{table}[htbp]
+  \resizebox*{\textwidth}{!}{
+  \centering
+  \begin{tabular}{|c|p{0.2\linewidth}|p{0.2\linewidth}|p{0.2\linewidth}|p{0.2\linewidth}|} 
+  \hline 
+  \textbf{Servicio} & \textbf{Tasa de datos} & \textbf{Pack básico} & \textbf{Pack intermedio} & \textbf{Pack premium} \\ \hline 
+\textbf{Canal SDTV} & 1.5 Mbps & 50 canales & 50 canales & 50 canales \\ \hline 
+\textbf{Canal HDTV} & 6 Mbps & - & - & 6 canales \\ \hline 
+\textbf{VoIP\footnote{ La tasa de datos es despreciable a la hora de realizar los cálculos.}} & 30 kbps & 30 kbps & 30 kbps & 30 kbps \\ \hline 
+\textbf{Internet} & - & - & 6 Mbps & 15 Mbps \\ \hline 
+\textbf{Clientes} & - & 25 & 44 & 14 \\ \hline 
+\end{tabular}}%
+\caption{contenido de pack de servicios.}
+\label{tab:cont_pack_servicio}
+\end{table}
+ 
+
+
+
+ Según el Ministerio de Planificación Federal, Inversión Pública y Servicios, en el año 2.009, en la República Argentina había aproximadamente 10 millones de hogares y cerca de 12 millones de televisores\footnote{\href{http://www.infoleg.gob.ar/basehome/actos_gobierno/actosdegobierno14-9-2009-2.htm}{Televisores por hogar}}. 
+ Se estima entonces que la cantidad de televisores supera en un 20\% la cantidad de hogares. 
+ Este porcentaje no se distribuye uniformemente sobre la población, varía según el poder adquisitivo de las personas y por consiguiente lo hace sobre los clientes, siendo más frecuente que una persona con un buen sueldo tenga más de un televisor. 
+ Por lo tanto, se puede decir que el 20\% de los 83 potenciales clientes, que corresponde a 17 clientes, tienen 2 televisores.
+Si se considera un máximo de 2 televisores por hogar y el poder adquisitivo de cada grupo, se estima que 8 clientes correspondientes al pack premium cuentan con dos televisores, 6 clientes en el pack intermedio y 3 en el pack básico.
+El resto de los clientes solo cuentan con un televisor. 
+Además, se considera que los clientes pertenecientes a los pack intermedios y premium hacen uso del 60\% de los megas correspondientes a cada pack.
+
+La tasa de transferencia en el peor de los casos para el pack premium da como resultado 18,42 Mbps, como muestra la ecuación \ref{eq:tasa_transf_premium}. 
+Esto se calcula de suponer que 8 clientes de los 14 (57\%) usan 2 canales HD simultáneamente, 6 clientes (43\%) utilizan solo un canal HD, sumando además el un factor de simultaneidad del 60\% en el internet. 
+
+
+\begin{equation}
+  2*6x{10}^6*0.57+6x{10}^6*0.43+0.6*15x{10}^6=18.42 \text{ Mbps}
+  \label{eq:tasa_transf_premium}
+\end{equation}
+
+
+De forma similar se realizaron los cálculos para los pack intermedios y básicos. 
+Los resultados se muestran en la ecuación \ref{eq:tasa_transf_int} y ecuación \ref{eq:tasa_transf_basic} respectivamente. 
+
+
+\begin{equation}
+ 2*1.5x{10}^6*0.136+1.5x{10}^6*0.863+ 0.6*6x{10}^6=5,3 \text{Mbps} 
+ \label{eq:tasa_transf_int}
+\end{equation}
+
+\begin{equation}
+ 2*1.5x{10}^6*0.12+1.5x{10}^6*0.88=1,68 \text{ Mbps}
+ \label{eq:tasa_transf_basic}
+\end{equation}
+ 
+
+ En la Fig. \ref{fig:cuadrantes_alem} se puede observar en rojo los cuadrantes en los cuales se concentra mayor cantidad de gente y con un icono verde la ubicación de las antenas de la Autopista de la Información. 
+ Observando el tamaño de los hogares, se supone que los grupos con mayor poder adquisitivo se encuentran entre los cuadrantes que van del 1 al 6, los cuales pueden ser potenciales clientes de los packs intermedio y premium. 
+ Sin embargo, entre los cuadrantes 1 y 2 se encuentra una antena Wi-Fi (5 GHz) brindando internet gratis por parte del gobierno. 
+ Considerando esto se decidió tener prioridad en los cuadrantes 3, 4, 5 y 6 a la hora de decidir la ubicación del Access Point (AP). Por otra parte, los cuadrantes del 11 al 14 no se ven alcanzados por ninguna antenas del gobierno, por lo que se estima que brindando un servicio que antes no disponían se encontrarán potenciales clientes en esta zona. 
+ Por último está la zona céntrica donde se encuentra la plaza, en los cuadrantes 9 y 10. Esta zona cuenta con una antena Wi-Fi (2,4 GHz) pero la misma se encuentra saturada, rondando en promedio los 45 clientes\footnote{\href{http://wifi.sanluis.gov.ar/}{Antenas Wi-Fi de la provincia de San Luis}}.
+
+
+\begin{figure}[htbp]
+  \centering
+  \includegraphics[width=0.75\linewidth]{fotos_ema/cuadrantes_alem.jpg}
+  \caption{a la izquierda la zona norte y a la derecha la zona sur de la localidad de leandro N. Alem.}
+  \label{fig:cuadrantes_alem}
+\end{figure}
+
+La cantidad de AP que se utilizarán para lograr la mayor cobertura posible y brindarle el servicio a los clientes se calcula a partir de la tasa de transferencia requerida por cliente teniendo en cuenta el peor de los casos.
+Para el siguiente cálculo se optó por no considerar el pack básico, de esta forma se sobredimensiona el sistema para un futuro crecimiento en caso de que nuevos clientes quieran adquirir el servicio y/o aquellos que quieran adquirir un mejor pack. 
+El promedio entre el caso más desfavorable de los pack intermedio y premium da como resultado 11,86 Mbps como se observa en la ecuación \ref{eq:prom_desf}. 
+
+\begin{equation}
+  \frac{18.426x{10}^6+5.3x{10}^6}{2}=11.86 \text{ Mbps}
+  \label{eq:prom_desf}
+\end{equation}
+
+La tasa de transferencia total para brindar el servicio viene dada por el valor de la Ecuación \ref{eq:prom_desf} multiplicada por cantidad de clientes. Esto se ve reflejado en la ecuación \ref{eq:total_mbps_need}:
+
+\begin{equation}
+  83 * 11.86x{10}^6 = 984.38 \text{ Mbps}
+  \label{eq:total_mbps_need}
+\end{equation}
+
+de los cuales se estima que por la cantidad de casas que se observan en la figura \ref{fig:cuadrantes_alem}, el 80 \% de la población vive en los cuadrantes del 1 al 9 y el 20\% restante se encuentra distribuido entre los cuadrantes 10 al 15. 
+Teniendo en cuenta esta distribución de la población, se utilizarán AP que trabajen en la banda de 2,4 GHz y 5 GHz, de esta forma los clientes que se encuentran distribuidos en los extremos de la localidad serán alcanzados por las antenas de 2,4 GHz ya que estas cuentan con mayor alcance a costas de menor transferencia de bits. 
+Por otro lado, en las partes que concentran mayor cantidad de clientes se utilizarán AP que trabajen en 5 GHz brindando una mayor tasa de transferencia pero menor alcance.
+
+Hay que considerar que las antenas elegidas deben tener una tasa bruta de el doble de la tasa de transferencia calculada en la ecuación \ref{eq:total_mbps_need} ya que se pierde alrededor del 50\% de la capacidad de transmisión para garantizar que  la información se transmite de forma segura. 
+Siendo así, la tasa de transferencia total es de 1.968 Mbps. 
+Sin embargo, esta tasa de transferencia se distribuye entre los equipos cuando la cantidad de APs utilizadas aumenta y no es necesario que un solo equipo soporte el total. 
+
+\subsection{Elección de los puntos de acceso}
+
+La elección de los AP se basó en la tasa de transferencia necesaria calculada en el punto anterior. 
+A continuación se mostrarán las características de los dos equipos AP que se analizaron: Aruba AP-375 y Altai A3-Ei.
+
+En la tabla \ref{tab:carac_aruba_AP375} se observa la potencia del transmisor y la sensibilidad de recepción del equipo Aruba AP-375, además de su familia de protocolos, tipo de antena y tasa de transferencia\footnote{\href{https://www.arubanetworks.com/assets/ds/DS_AP370Series.pdf}{Datasheet Aruba AP-375}}. 
+Tanto la potencia del transmisor, como la sensibilidad del receptor, poseen un rango de valores que varía dependiendo el tipo de modulación elegida.
+
+\subsubsection{Características Aruba AP-375}
+
+\begin{table}[htbp]
+  \resizebox*{\textwidth}{!}{
+\centering
+\begin{tabular}{|p{0.1\textwidth}|p{0.2\textwidth}|p{0.2\textwidth}|p{0.2\textwidth}|p{
+0.2\textwidth}|p{0.1\textwidth}|} 
+\hline 
+\textbf{Banda de frecuencia} & \textbf{Tasa de transmisión} & \textbf{Antena} & \textbf{Rango potencia transmisor} & \textbf{Rango sensibilidad receptor} & \textbf{Familia protocolos} \\ 
+\hline 
+2,4 GHz & Hasta 300 Mb/s & 2x2 MIMO\newline omnidireccional  & Max: 23 dBm\newline Min: 18 dBm & Min: -93 dBm\newline Max: -71 dBm & 802.11n \\ 
+\hline 
+5 GHz & 1733 Mb/s & 4x4 MU-MIMO\newline omnidireccional & Max: 22 dBm\newline Min: 15 dBm & Min: -87 dBm\newline Max: -61 dBm & 802.11ac \\ 
+\hline 
+\end{tabular}}
+\caption{características de AP Aruba AP-375.}
+\label{tab:carac_aruba_AP375}
+\end{table}
+
+Al analizar el equipo en la frecuencia de 2,4 GHz por medio de su datasheet se puede observar en la tabla \ref{tab:anchos_banda_canal} que dependiendo el tipo de modulación MCS a usar, también se tienen diferentes anchos de banda del canal. 
+En el modo HT20 es de 20 MHz, y en el modo HT40 es de 40 MHz. 
+
+\begin{table}[htbp]
+  \centering
+    \begin{tabular}{|c|c|c|}
+    \hline
+    \multicolumn{3}{|c|}{802.11n(2,4 GHz): 6,5 to 300 (MCS0 to MCS15)} \bigstrut\\
+    \hline
+    \multicolumn{3}{|l|}{802.11n HT20 2,4 GHz} \bigstrut\\
+    \hline
+    MCS0/8 & 25   & -93 \bigstrut\\
+    \hline
+    MCS7/15 & 18   & -71 \bigstrut\\
+    \hline
+    \multicolumn{3}{|l|}{802.11n HT40 2,4 GHz} \bigstrut\\
+    \hline
+    MCS0/8 & 22   & -90 \bigstrut\\
+    \hline
+    MCS7/15 & 18   & -68 \bigstrut\\
+    \hline
+    \end{tabular}%
+  \caption{anchos de banda de canal.}
+  \label{tab:anchos_banda_canal}%
+\end{table}%
+ 
+
+Como la tasa de transferencia del equipo es de hasta 300 Mbps, se busca este valor en la tabla MCS Index\footnote{\href{https://wlanprofessionals.com/mcs-table-and-how-to-use-it/}{Tabla MCS y como usarla}} y se obtienen los valores mostrados en las Fig. \ref{fig:msc_index_2_4GHz}. 
+Una tabla MCS es una búsqueda que se puede utilizar para encontrar qué velocidad de datos se negociará entre dos estaciones una vez que se conocen todos los parámetros de conexión. 
+Para cada combinación posible de modulación, tasa de codificación, número de flujos espaciales, ancho de canal e intervalo de guarda, existe un índice MCS único.
+
+
+\begin{figure}[htbp]
+  \centering
+  \includegraphics[width=0.5\linewidth]{fotos_ema/msc_index_2_4GHz.jpg}
+  \caption{MSC Index-Análisis para 2,4 GHz.}
+  \label{fig:msc_index_2_4GHz}
+\end{figure}
+
+
+Finalmente, se opta por usar el ancho de banda en el modo HT40 ya que con este se obtiene la tasa de transferencia máxima para una frecuencia de 2,4 GHz.
+
+Para realizar el análisis en la frecuencia de 5 GHz, se deben tener en cuenta el ancho de banda de canal, cantidad de flujos espaciales (SS) y el tipo de modulación. 
+Por medio del datasheet del equipo, se obtiene la Fig. \ref{fig:msc_index_2_4GHz} que indica que para una modulación MCS entre 0 y 9, con un flujo espacial entre 1 y 4 y con un ancho de banda de canal entre 20,40 y 80 MHz, se obtiene una tasa de transferencia de hasta 1733 MBps.
+
+\begin{figure}[htbp]
+  \centering
+  \includegraphics[width=0.5\linewidth]{fotos_ema/carac_ap_1733.jpg}
+  \caption{Características de AP para una tasa de transferencia de 1733 Mbps.}
+  \label{fig:carac_ap_1733}
+\end{figure}
+
+Luego, se recurre al MCS Index para encontrar la modulación requerida. 
+Esto se muestra en la Fig. \ref{fig:msc_index_5_GHz}.
+
+\begin{figure}[htbp]
+  \centering
+  \includegraphics[width=0.5\linewidth]{fotos_ema/msc_index_5_GHz.jpg}
+  \caption{Características de AP para una tasa de transferencia de 1733 Mbps.}
+  \label{fig:msc_index_5_GHz}
+\end{figure}
+
+
+\subsubsection{Características Altai A3-Ei}
+
+De igual manera, se analiza el AP Altai A3-Ei, mostrando los datos de la datasheet\footnote{\href{https://www.altaitechnologies.com/portfolio-item/a3-ei/}{Datasheet Altai A3-Ei}} en la tabla \ref{tab:carac_AP_altai}.
+
+\begin{table}[htbp]
+  \resizebox*{\textwidth}{!}{
+  \centering
+    \begin{tabular}{|c|c|c|p{0.2\textwidth}|p{0.2\textwidth}|c|} 
+    \hline 
+    \textbf{Banda de frecuencia} & \textbf{Tasa de transmisión} & \textbf{Antena} & \textbf{Rango potencia transmisor} & \textbf{Rango sensibilidad receptor} & \textbf{Familia protocolos} \\ 
+    \hline 
+    2,4 GHz & Hasta 450 MBps & 3x3:3 MIMO & Max:30 dBm \newline Min: 25 dBm & HT20: -92dBm \newline HT40: -88dBm & 802.11n \\ 
+    \hline 
+    5 GHz & Hasta 1300 MBps & 3x3:3 MIMO & Max:30 dBm \newline Min: 25 dBm & HT20: -92dBm \newline HT40: -88dBm & 802.11ac \\ 
+    \hline 
+\end{tabular}}
+\caption{características AP Altai A3-Ei.}
+\label{tab:carac_AP_altai}
+\end{table}
+
+
+Mediante la tabla \ref{tab:carac_aruba_AP375}, tabla \ref{tab:carac_AP_altai}  y los datasheet de cada uno de los AP, se puede observar que las especificaciones técnicas de los dos equipos son muy similares pero la ventaja y la razón por la cual se optó por usar el AP Aruba AP-375 es debido a que su antena es omnidireccional, lo cual no ocurre en el AP Altai A3-Ei que posee una antena direccional. 
+Como los AP se colocarán en zonas céntricas de la ciudad, se necesita que posean antenas omnidireccionales para abarcar todos los alrededores. 
+Además, este tipo de AP es el usado por la autopista de la información para ofrecer  Wi-Fi gratuito del gobierno lo que nos asegura su facilidad de adquisición de repuestos. 
+La conexión desde el nodo hasta el POE será realizada por fibra óptica por medio de un transceptor SFP. Para poder acoplarse se necesitará un adaptador fibra-Ethernet.
+
+\subsection{Elección del Equipo Local del Cliente}
+
+El próximo equipo a elegir son los CPE (Equipo Local del Cliente) que se instalarán en los domicilios de los clientes para conectarse a los AP. 
+De igual manera que en el análisis de selección de AP, se analizan los equipos para las dos diferentes frecuencias de trabajo. 
+En las siguientes tablas se detallan los dispositivos elegidos junto a sus alternativas:
+
+\subsubsection{Para 5 GHz/ 2,4 GHz}
+
+
+\begin{table}[htbp]
+  \resizebox*{\textwidth}{!}{
+  \centering
+  
+    \begin{tabular}{|c|c|p{7.45em}|c|c|c|c|}
+\cline{2-7}    \multicolumn{1}{r|}{} & Modelo & Velocidad (5 GHz/2.4 GHz) & Protocolos & Potencia de transmisión & Sensibilidad & Ganancia de antena \\
+    \hline
+    \multirow{2}[4]{*}{Elegida} & \multirow{2}[4]{*}{Mikrotik-LHG 5} & 867 Mb/s & \multirow{2}[4]{*}{802.11a/n/ac} & \multirow{2}[4]{*}{Hasta 25 dBm} & \multirow{2}[4]{*}{Hasta -96 dBm} & \multirow{2}[4]{*}{24,5 dBi} \bigstrut\\
+\cline{3-3}         &      & No posee &      &      &      &  \bigstrut\\
+    \hline
+    \multirow{2}[4]{*}{Alternativa} & \multirow{2}[4]{*}{TP-link-CPE 710} & 867 Mb/s & \multirow{2}[4]{*}{802.11a/n/ac} & \multirow{2}[4]{*}{Hasta 27 dBm} & \multirow{2}[4]{*}{Hasta -93 dBm} & \multirow{2}[4]{*}{23 dBi}\bigstrut\\
+\cline{3-3}         &      & 300 Mb/s &      &      &      &  \bigstrut\\
+    \hline
+    \end{tabular}}%
+    \caption{Add caption}
+  \label{tab:addlabel}%
+\end{table}%
 
 
 
 
-
-
-
-
-
+Se eligen los equipos de la marca Mikrotik para la frecuencia de 5 GHz y TP-link para la frecuencia de 2.4 GHz por la ventaja de que son extensamente comercializados en el país, de modo que es sencillo obtener repuestos o reemplazos. También se tuvo en consideración que son antenas económicas y muy utilizadas por los habitantes de San Luis para conectarse a las antenas del Wi-Fi del Gobierno, por lo que es probable que los clientes posean una antena actualmente que pueda ser utilizada (ahorrando el costo de compra e instalación de la misma), y que los técnicos que realizarán la instalación están familiarizados con los equipos ya que es probable que hayan trabajado anteriormente.
 
 \part{Red de fibra óptica}
 
