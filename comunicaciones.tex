@@ -11,14 +11,12 @@
 \usepackage{titlesec}
 \usepackage{multirow}
 \usepackage{subcaption}
-\usepackage{subfig}
 \usepackage{wrapfig}
 \usepackage{lscape}
 \usepackage{rotating}
 \usepackage[spanish]{babel}
 \usepackage[section]{placeins}
 \usepackage{tablefootnote}
-\usepackage{subcaption}
 \usepackage{graphicx}
 \usepackage{epstopdf}
 \usepackage[font=scriptsize,labelfont=bf]{caption}
@@ -127,7 +125,8 @@ Según el censo del Instituto Nacional de Estadísticas y Censos (I.N.D.E.C.) de
 
 Debido a que se necesita un análisis actual de la situación poblacional de la localidad, se presentará en cada tabla una estimación al actual año 2.021. Para ello, se utilizará una proyección poblacional estimada del departamento de Ayacucho, realizada por la Dirección Provincial de Estadísticas y Censos de la provincia de San Luis. En la misma, se indica que la población total para julio de 2.021 será de 22.266 habitantes. Para estimar la población presente en julio del año 2.021 en la localidad de Leandro N. Além se tuvo en consideración el porcentaje de personas que representaba dicha localidad respecto del departamento de Ayacucho teniendo en cuenta el censo del año 2.010.
 
-Para entonces, Leandro N. Alem representaba el 1,93$\%$ de la población total del departamento Ayacucho. Esta conclusión se obtiene de la ecuación \ref{eq:porc_alem}.
+Para entonces, Leandro N. Alem representaba el 1,93$\%$ de la población total del departamento Ayacucho. 
+Esta conclusión se obtiene de la ecuación \ref{eq:porc_alem}.
 
 \begin{equation}
     \frac{\text{Población de Leandro N. Alem en el año 2.001}}{\text{Población del departamento Ayacucho en el año 2.001}}*100\%=\frac{379}{19613}*100\%=1.93\%
@@ -241,28 +240,14 @@ Con dichos datos, se podrán determinar distintos grupos a los cuales brindar un
 
 Observando la Fig. \ref{fig:agropecuaria} y la Fig. \ref{fig:industria}, se puede concluir que la principal actividad privada que se desarrolla en el departamento Ayacucho es la actividad agropecuaria.
 
-
 \begin{figure}[ht!]
-        \centering
-        \begin{subfigure}[b]{0.48\textwidth}
-        \centering
-            \includegraphics[width=0.9\linewidth]{fotos_ema/agropecuaria}
-            \captionsetup{width=0.7\linewidth}
-            \caption{actividad agropecuaria por departamento.}
-            \label{fig:agropecuaria}     
-        \end{subfigure}%        
-        \begin{subfigure}[b]{0.48\textwidth}
-        \centering
-            \includegraphics[width=0.9\linewidth]{fotos_ema/industria}
-            \captionsetup{width=0.7\linewidth}
-            \caption{actividad industrial por departamento.}
-            \label{fig:industria}     
-        \end{subfigure}%
-        
-        \caption{actividades económicas de la provincia de San Luis por departamento.}
-        \label{fig:econo_deptos}
-    \end{figure}
-
+  \centering
+  \subfloat[actividad agropecuaria por departamento.\label{fig:agropecuaria}]{\includegraphics[height=18\baselineskip]{fotos_ema/agropecuaria}}\quad
+  \subfloat[actividad industrial por departamento.\label{fig:industria}]{\includegraphics[height=18\baselineskip]{fotos_ema/industria}}\quad
+  
+  \caption{actividades económicas de la provincia de San Luis por departamento.}
+  \label{fig:econo_deptos}
+\end{figure}
 
 Por lo tanto, si se tienen en cuenta los datos aportados por la tabla \ref{tab:salarios_alem}, para el año 2.017 se tiene un sueldo de \$17.691. 
 Tomando en cuenta que la inflación acumulada en los años 2.017, 2.018, 2.019 y 2.020 es del 162,3\%, se puede determinar que el valor actual ajustado por inflación corresponde a \$46.403 pesos argentinos para el sector privado.
