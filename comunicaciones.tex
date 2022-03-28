@@ -242,9 +242,10 @@ Observando la Fig. \ref{fig:agropecuaria} y la Fig. \ref{fig:industria}, se pued
 
 \begin{figure}[ht!]
   \centering
-  \subfloat[actividad agropecuaria por departamento.\label{fig:agropecuaria}]{\includegraphics[height=18\baselineskip]{fotos_ema/agropecuaria}}\quad
-  \subfloat[actividad industrial por departamento.\label{fig:industria}]{\includegraphics[height=18\baselineskip]{fotos_ema/industria}}\quad
-  
+  \subcaptionbox{actividad agropecuaria por departamento.\label{fig:agropecuaria}}%
+  [.45\linewidth]{\includegraphics[height=16\baselineskip]{fotos_ema/agropecuaria}}
+\subcaptionbox{actividad industrial por departamento.\label{fig:industria}}
+  [.45\linewidth]{\includegraphics[height=16\baselineskip]{fotos_ema/industria}}
   \caption{actividades económicas de la provincia de San Luis por departamento.}
   \label{fig:econo_deptos}
 \end{figure}
@@ -732,8 +733,10 @@ En la Fig. \ref{fig:con_alt} se presenta el tramo entre Leandro N. Alem y el rep
 
 \begin{figure}[ht!]
   \centering
-  \subfloat[conexión alternativa entre Leandro N. Alem y el repetidor.]{\includegraphics[height=13\baselineskip]{fotos_ema/con_alt_alem_rep.jpg}}\quad
-  \subfloat[conexión alternativa entre el repetidor y Quines.]{\includegraphics[height=13\baselineskip]{fotos_ema/con_alt_rep_quines.jpg}}\quad
+  \subcaptionbox{conexión alternativa entre Leandro N. Alem y el repetidor.}%
+  [.48\linewidth]{\includegraphics[height=11\baselineskip]{fotos_ema/con_alt_alem_rep.jpg}}%
+  \subcaptionbox{conexión alternativa entre el repetidor y Quines.}
+  [.48\linewidth]{\includegraphics[height=11\baselineskip]{fotos_ema/con_alt_rep_quines.jpg}}
   \caption{conexión alternativa entre Leandro N. Alem y Quines.}
   \label{fig:con_alt}
 \end{figure}
@@ -745,8 +748,11 @@ Sin embargo, es necesario usar más torres y equipos de transmisión lo cual no 
 
 \begin{figure}[ht!]
   \centering
-  \subfloat[simulación de la conexión alternativa entre Leandro N. Alem y el repetidor.]{\includegraphics[width=0.48\linewidth]{fotos_ema/sim_alt_alem_rep}}\quad
-  \subfloat[simulación de la conexión alternativa entre el repetidor y Quines.]{\includegraphics[width=0.48\linewidth]{fotos_ema/sim_alt_rep_quines}}\quad
+  \subcaptionbox{simulación de la conexión alternativa entre Leandro N. Alem y el repetidor.}%
+  [.48\linewidth]{\includegraphics[height=10\baselineskip]{fotos_ema/sim_alt_alem_rep}}%
+  \hfill%
+  \subcaptionbox{simulación de la conexión alternativa entre el repetidor y Quines.}
+  [.48\linewidth]{\includegraphics[height=10\baselineskip]{fotos_ema/sim_alt_rep_quines}}
   \caption{simulación de la conexión alternativa entre Leandro N. Alem y Quines.}
   \label{fig:sim_alt}
 \end{figure}
@@ -757,10 +763,14 @@ Sin embargo, es necesario usar más torres y equipos de transmisión lo cual no 
 
 A continuación, se presenta en la Fig. \ref{fig:con_alt2}, la conexión entre la localidad de Leandro N. Alem y el repetidor de la segunda conexión alternativa, y la conexión entre dicho repetidor y Quines.
 
+
 \begin{figure}[ht!]
   \centering
-  \subfloat[segunda conexión alternativa entre Leandro N. Alem y el repetidor.]{\includegraphics[height=9\baselineskip]{fotos_ema/con_alt2_alem_rep.jpg}}\quad
-  \subfloat[segunda conexión alternativa entre el repetidor y Quines.]{\includegraphics[height=9\baselineskip]{fotos_ema/con_alt2_rep_quines.jpg}}\quad
+  \subcaptionbox{segunda conexión alternativa entre Leandro N. Alem y el repetidor.}%
+  [.48\linewidth]{\includegraphics[height=8.5\baselineskip]{fotos_ema/con_alt2_alem_rep.jpg}}%
+  \hfill%
+  \subcaptionbox{segunda conexión alternativa entre el repetidor y Quines.}
+  [.48\linewidth]{\includegraphics[height=8.5\baselineskip]{fotos_ema/con_alt2_rep_quines.jpg}}
   \caption{segunda conexión alternativa entre Leandro N. Alem y Quines.}
   \label{fig:con_alt2}
 \end{figure}
@@ -772,11 +782,15 @@ La diferencia con la opción anterior radica en una menor altura en total, suman
 
 \begin{figure}[ht!]
   \centering
-  \subfloat[simulación de la conexión alternativa entre Leandro N. Alem y el repetidor.]{\includegraphics[width=0.48\linewidth]{fotos_ema/sim_alt2_alem_rep}}\quad
-  \subfloat[simulación de la conexión alternativa entre el repetidor y Quines.]{\includegraphics[width=0.48\linewidth]{fotos_ema/sim_alt2_rep_quines}}\quad
-  \caption{simulación de la conexión alternativa entre Leandro N. Alem y Quines.}
+  \subcaptionbox{simulación de la segunda conexión alternativa entre Leandro N. Alem y el repetidor.}%
+  [.48\linewidth]{\includegraphics[height=10\baselineskip]{fotos_ema/sim_alt2_alem_rep}}%
+  \hfill%
+  \subcaptionbox{simulación de la segunda conexión alternativa entre el repetidor y Quines.}
+  [.48\linewidth]{\includegraphics[height=10\baselineskip]{fotos_ema/sim_alt2_rep_quines}}
+  \caption{simulación de la segunda conexión alternativa entre Leandro N. Alem y Quines.}
   \label{fig:sim_alt2}
 \end{figure}
+
 \clearpage
 \subsubsection{Elección del tipo de enlace}
 Observando los distintos enlaces propuestos, se decide optar por la conexión directa, ya que la misma presenta las siguientes ventajas:
