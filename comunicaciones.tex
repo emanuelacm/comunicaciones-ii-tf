@@ -939,7 +939,7 @@ Esto se calcula de suponer que 8 clientes de los 14 (57\%) usan 2 canales HD sim
 
 
 \begin{equation}
-  2*6x{10}^6*0.57+6x{10}^6*0.43+0.6*15x{10}^6=18.42 \text{ Mbps}
+  2*6*{10}^6*0.57+6*{10}^6*0.43+0.6*15*{10}^6=18.42 \text{ Mbps}
   \label{eq:tasa_transf_premium}
 \end{equation}
 
@@ -949,12 +949,12 @@ Los resultados se muestran en la ecuación \ref{eq:tasa_transf_int} y ecuación 
 
 
 \begin{equation}
- 2*1.5x{10}^6*0.136+1.5x{10}^6*0.863+ 0.6*6x{10}^6=5,3 \text{Mbps} 
+ 2*1.5*{10}^6*0.136+1.5*{10}^6*0.863+ 0.6*6*{10}^6=5,3 \text{Mbps} 
  \label{eq:tasa_transf_int}
 \end{equation}
 
 \begin{equation}
- 2*1.5x{10}^6*0.12+1.5x{10}^6*0.88=1,68 \text{ Mbps}
+ 2*1.5*{10}^6*0.12+1.5*{10}^6*0.88=1,68 \text{ Mbps}
  \label{eq:tasa_transf_basic}
 \end{equation}
  
@@ -978,14 +978,14 @@ Para el siguiente cálculo se optó por no considerar el pack básico, de esta f
 El promedio entre el caso más desfavorable de los pack intermedio y premium da como resultado 11,86 Mbps como se observa en la ecuación \ref{eq:prom_desf}. 
 
 \begin{equation}
-  \frac{18.426x{10}^6+5.3x{10}^6}{2}=11.86 \text{ Mbps}
+  \frac{18.426*{10}^6+5.3*{10}^6}{2}=11.86 \text{ Mbps}
   \label{eq:prom_desf}
 \end{equation}
 
 La tasa de transferencia total para brindar el servicio viene dada por el valor de la Ecuación \ref{eq:prom_desf} multiplicada por cantidad de clientes. Esto se ve reflejado en la ecuación \ref{eq:total_mbps_need}:
 
 \begin{equation}
-  83 * 11.86x{10}^6 = 984.38 \text{ Mbps}
+  83 * 11.86*{10}^6 = 984.38 \text{ Mbps}
   \label{eq:total_mbps_need}
 \end{equation}
 
@@ -1015,9 +1015,9 @@ Tanto la potencia del transmisor, como la sensibilidad del receptor, poseen un r
 \hline 
 \textbf{Banda de frecuencia} & \textbf{Tasa de transmisión} & \textbf{Antena} & \textbf{Rango potencia transmisor} & \textbf{Rango sensibilidad receptor} & \textbf{Familia protocolos} \\ 
 \hline 
-2,4 GHz & Hasta 300 Mb/s & 2x2 MIMO\newline omnidireccional  & Max: 23 dBm\newline Min: 18 dBm & Min: -93 dBm\newline Max: -71 dBm & 802.11n \\ 
+2,4 GHz & Hasta 300 Mbps & 2x2 MIMO\newline omnidireccional  & Max: 23 dBm\newline Min: 18 dBm & Min: -93 dBm\newline Max: -71 dBm & 802.11n \\ 
 \hline 
-5 GHz & 1733 Mb/s & 4x4 MU-MIMO\newline omnidireccional & Max: 22 dBm\newline Min: 15 dBm & Min: -87 dBm\newline Max: -61 dBm & 802.11ac \\ 
+5 GHz & 1733 Mbps & 4x4 MU-MIMO\newline omnidireccional & Max: 22 dBm\newline Min: 15 dBm & Min: -87 dBm\newline Max: -61 dBm & 802.11ac \\ 
 \hline 
 \end{tabular}}
 \caption{características de AP Aruba AP-375.}
@@ -1180,7 +1180,7 @@ La ubicación de las mismas se plantea en la Fig. \ref{fig:ubic_ap_alem}.
 \begin{figure}[htbp]
   \centering
   \includegraphics[width=0.8\linewidth]{fotos_ema/ubic_ap_alem.jpg}
-  \caption{Ubicación de los APs en la localidad de Leandro N. Alem.}
+  \caption{ubicación de los APs en la localidad de Leandro N. Alem.}
   \label{fig:ubic_ap_alem}
 \end{figure}
 
@@ -1190,13 +1190,15 @@ Se decidió la ubicación de la antena 1 debido a la gran cantidad de edificacio
 Por otro lado, se decidió la ubicación de la antena 2, debido a que existe una cantidad importante de edificaciones, pero no se encuentran cubiertas por el rango de ninguna antena de la competencia. 
 Teniendo esto en cuenta, cada equipo deberá lograr una tasa de transferencia bruta de por lo menos 985 Mbps.
 
+\subsection{Armado de las bases de datos}
+
 Para poder realizar la simulación, con la ayuda del programa AutoCAD se procede a realizar un trazado de los edificios y de la vegetación presente en la localidad. 
 Esto se muestra en la Fig. \ref{fig:trazado_edif_autocad}, en donde se marcan detalles tales como casas, árboles, galpones, rutas y caminos, entre otros.
 
 \begin{figure}[htbp]
   \centering
   \includegraphics[width=0.6\linewidth]{fotos_ema/trazado_edif_autocad.jpg}
-  \caption{Trazado de edificios en AutoCAD.}
+  \caption{trazado de edificios en AutoCAD.}
   \label{fig:trazado_edif_autocad}
 \end{figure}
 
@@ -1207,29 +1209,273 @@ La base de datos obtenida se muestra en la Fig. \ref{fig:base_datos_wallman}, en
 \begin{figure}[htbp]
   \centering
   \includegraphics[width=0.5\linewidth]{fotos_ema/base_datos_wallman.jpg}
-  \caption{Base de datos en WallMan.}
+  \caption{base de datos en WallMan.}
   \label{fig:base_datos_wallman}
 \end{figure}
 
 Teniendo la base de datos de los edificios, y la base de datos topográfica, obtenida de internet,\footnote{\href{https://opentopography.org}{OpenTopography}} se procede a comenzar la simulación en PropMan. 
 Para ello es necesario definir la interfaz aérea. 
 Debido a que la antena elegida trabaja con protocolos estandarizados, se utilizan los archivos de configuración de ejemplos otorgados por el programa. Según los requerimientos de velocidad y los protocolos a utilizar previamente expuestos, los archivos a utilizar serán para la frecuencia 2.4 GHz \textit{IEEE 802.11n 40MHz.wst }y para la frecuencia de 5 GHz \textit{IEEE 802.11ac 80MHz.wst}. 
-Posteriormente a la carga de la base de datos topográfica, la base de datos de los edificios y el archivo de interfaz aérea, se obtiene el siguiente espacio de simulación en el programa PropMan, mostrado en la Figura~8. 
+Posteriormente a la carga de la base de datos topográfica, la base de datos de los edificios y el archivo de interfaz aérea, se obtiene el siguiente espacio de simulación en el programa PropMan, mostrado en la Fig. \ref{fig:sim_ubic_antenas}. 
 Además, en dicha figura se encuentran presentes los sitios donde se emplazarán las antenas. 
 Debido a que la antena elegida trabaja con dos bandas de frecuencia, se procederá a realizar una simulación y un análisis de los resultados obtenidos por separado.
 
 \begin{figure}[htbp]
   \centering
   \includegraphics[width=0.75\linewidth]{fotos_ema/sim_ubic_antenas.jpg}
-  \caption{Base de datos en WallMan.}
-  \label{fig:base_datos_wallman}
+  \caption{espacio de simulación con la  ubicación de las antenas.}
+  \label{fig:sim_ubic_antenas}
 \end{figure}
+
+
+\subsection{Frecuencia 2.4 GHz}
+
+Si bien el datasheet del fabricante no brinda información sobre el patrón de radiación de la antena, diciendo solamente que es omnidireccional y presenta una ganancia de 4 dBi, se encontró en un foro administrado por la empresa fabricante\footnote{\href{https://community.arubanetworks.com/community-home/digestviewer/viewthread?MID=25688}{Patrón de radiación de la antena}}, que la antena presenta un patrón similar al patrón de su modelo predecesor, Aruba AP-275. 
+El mismo es mostrado en la Fig. \ref{fig:patron_2_4_GHz}, y se utilizó para moldear con el programa AMan un modelo en 3D, necesario para la simulación. 
+
+\begin{figure}[htbp]
+  \centering
+  \includegraphics[width=\linewidth]{fotos_ema/patron_2_4_GHz.jpg}
+  \caption{patrón de radiación de la antena.}
+  \label{fig:patron_2_4_GHz}
+\end{figure}
+
+Se obtiene la siguiente configuración de red, presente en la Fig. \ref{fig:conf_red_2_4}, en donde considerando que la antena soporta tecnología 2x2 MIMO, se selecciona esta opción. 
+Además, se desactivan los modos de transmisión que ofrecen data rates menores a 70 Mbps, ya que presentan niveles muy bajos de transferencia de datos.
+
+
+\begin{figure}[htbp]
+  \centering
+  \includegraphics[width=0.5\linewidth]{fotos_ema/conf_red_2_4.jpg}
+  \caption{configuración de red para la frecuencia de 2,4 GHz.}
+  \label{fig:conf_red_2_4}
+\end{figure}
+
+Por otro lado, se considera una altura de 4 metros para el CPE. 
+Esto se decidió de manera empírica, al observar que la mayoría de las antenas se encuentran a esa altura, y suponiendo además casas con alturas máximas de 3 metros, es posible colocar las antenas receptoras a esta altura. 
+La antena emisora, se coloca a 5 metros para tratar de evitar la mayor cantidad de obstáculos. 
+Esta decisión es reforzada por el relevamiento realizado en algunos puntos de San Luis, en donde la mayoría de las antenas se encuentran a una altura promedio de 5 metros.
+
+El método de computación a utilizar es el D.P.M. debido a su rapidez y fiabilidad. 
+Con dicho método se obtiene la potencia entregada por cada antena, las respectivas áreas que poseen la misma velocidad de transmisión de datos, la relación señal ruido y la probabilidad de recepción. 
+
+\subsubsection{Potencia}
+
+En la Fig. \ref{fig:pot_trans_eq_1} se presenta la potencia transmitida por el equipo colocado en el lugar marcado como \textbf{Antena 1}, mientras que la Fig. \ref{fig:pot_trans_eq_2} muestra la potencia entregada por el equipo colocado en el lugar marcado como \textbf{Antena 2}.
+
+\begin{figure}[ht!]
+  \centering
+  \subcaptionbox{potencia transmitida por el equipo 1.\label{fig:pot_trans_eq_1}}[.9\linewidth]{\includegraphics[height=14\baselineskip]{fotos_ema/pot_trans_eq_1.jpg}}
+
+  \subcaptionbox{potencia transmitida por el equipo 2.\label{fig:pot_trans_eq_2}}[.9\linewidth]{\includegraphics[height=14\baselineskip]{fotos_ema/pot_trans_eq_2.jpg}}
+  \caption{potencia entregada por los equipos.}
+  \label{fig:pot_eq_24_GHz}
+\end{figure}
+
+
+\subsubsection{Velocidad de transmisión de datos}
+
+En la Fig. \ref{fig:vel_trans_datos_1} se muestra el máximo data rate de ambas antenas para el uplink. En la Fig. \ref{fig:vel_trans_datos_2} se lo muestra para el downlink.
+
+\begin{figure}[ht!]
+  \centering
+  \subcaptionbox{máximo data rate para el enlace uplink.\label{fig:vel_trans_datos_1}}[.9\linewidth]{\includegraphics[height=14\baselineskip]{fotos_ema/vel_trans_datos_1.jpg}}
+
+  \subcaptionbox{máximo data rate para el enlace downlink.\label{fig:vel_trans_datos_2}}[.9\linewidth]{\includegraphics[height=14\baselineskip]{fotos_ema/vel_trans_datos_2.jpg}}
+  \caption{simulación de la máxima tasa de transferencia.}
+  \label{fig:vel_trans_datos_24}
+\end{figure}
+
+
+\subsubsection{Relación señal ruido más interferencia}
+
+A continuación, se muestra la relación señal ruido más interferencia para ambas antenas. 
+Eligiendo una modulación 16 QAM se obtiene un mayor alcance al mismo tiempo que se  compromete el data rate. 
+Debido a la distribución poblacional presente, es que se opta por realizar este compromiso. 
+Sin embargo, esto no presenta un problema ya que el data rate es suficiente. 
+En la Fig. \ref{fig:ul_snr_2_4} se muestra dicha relación para el uplink, mientras que en la Fig. \ref{fig:dl_snr_2_4} se muestra la relación para el downlink.
+
+\begin{figure}[ht!]
+  \centering
+  \subcaptionbox{relación señal-ruido más interferencia para el uplink.\label{fig:ul_snr_2_4}}[.9\linewidth]{\includegraphics[height=14\baselineskip]{fotos_ema/ul_snr_2_4.jpg}}
+
+  \subcaptionbox{relación señal-ruido más interferencia para el downlink\label{fig:dl_snr_2_4}}[.9\linewidth]{\includegraphics[height=14\baselineskip]{fotos_ema/dl_snr_2_4.jpg}}
+  \caption{relación señal-ruido más interferencia.}
+  \label{fig:snr_2_4}
+\end{figure}
+
+
+
+\subsubsection{Probabilidad de recepción}
+
+Para poder realizar una mejor estimación de la recepción, el programa brinda la posibilidad de obtener la probabilidad de recepción de la señal teniendo en cuenta el umbral de recepción, la potencia de transmisión y la ganancia de la antena del equipo CPE. 
+Con esto, se obtiene la Fig. \ref{fig:dl_prob_rec_2_4} para el downlink y la Fig. \ref{fig:ul_prob_rec_2_4} para el uplink.
+
+
+\begin{figure}[ht!]
+  \centering
+  \subcaptionbox{probabilidad de recepción para el downlink.\label{fig:dl_prob_rec_2_4}}[.9\linewidth]{\includegraphics[height=14\baselineskip]{fotos_ema/dl_prob_rec_2_4.jpg}}
+
+  \subcaptionbox{probabilidad de recepción para el uplink.\label{fig:ul_prob_rec_2_4}}[.9\linewidth]{\includegraphics[height=14\baselineskip]{fotos_ema/ul_prob_rec_2_4.jpg}}
+  \caption{simulación de la probabilidad de recepción.}
+  \label{fig:prob_rec_2_4}
+\end{figure}
+
+\clearpage
+\subsection{Frecuencia de 5 GHz}
+
+Para una frecuencia de 5 GHz, se tiene una antena con un patrón de radiación como el mostrado en la Figura \ref{fig:patron_2_4_GHz}, pero con una ganancia de 4,6 dBi. 
+Una vez modificados los parámetros y cargado el archivo de interfaz aérea, se tiene la siguiente configuración mostrada en la Fig. \ref{fig:conf_red_5}, en donde debido a las características de la antena se selecciona la tecnología MIMO 4x4. 
+Además se desactivan los modelos de transmisión que brindan velocidades de transmisión menores a 200 Mbps, ya que con las mismas no se logra cumplir con los requisitos previamente mencionados.
+
+
+\begin{figure}[htbp]
+  \centering
+  \includegraphics[width=0.5\linewidth]{fotos_ema/conf_red_5.jpg}
+  \caption{configuración de red para la frecuencia de 5 GHz.}
+  \label{fig:conf_red_5}
+\end{figure}
+
+
+Se respeta la configuración de las alturas de las antenas, la posición de las mismas y del modo de computación utilizado en la simulación de la frecuencia de 2.4 GHz. 
+Con dicha configuración, se procederá a analizar la potencia entregada por cada equipo, el máximo data rate obtenible, la relación señal-ruido y la probabilidad de recepción del servicio. 
+
+%===================================================================
+
+\subsubsection{Potencia}
+
+En la Fig. \ref{fig:pot_trans_eq_1_5GHz} se presenta la potencia transmitida por el equipo colocado en el lugar marcado como \textbf{Antena 1}, mientras que la Fig. \ref{fig:pot_trans_eq_2_5GHz} muestra la potencia entregada por el equipo colocado en el lugar marcado como \textbf{Antena 2}.
+
+\begin{figure}[ht!]
+  \centering
+  \subcaptionbox{potencia transmitida por el equipo 1.\label{fig:pot_trans_eq_1_5GHz}}[.9\linewidth]{\includegraphics[height=14\baselineskip]{fotos_ema/pot_trans_eq_1_5GHz.jpg}}
+
+  \subcaptionbox{potencia transmitida por el equipo 2.\label{fig:pot_trans_eq_2_5GHz}}[.9\linewidth]{\includegraphics[height=14\baselineskip]{fotos_ema/pot_trans_eq_2_5GHz.jpg}}
+  \caption{potencia entregada por los equipos.}
+  \label{fig:pot_trans_5GHz}
+\end{figure}
+
+
+\subsubsection{Velocidad de transmisión de datos}
+
+En la Fig. \ref{fig:ul_drate_5GHz} se muestra el máximo data rate de ambas antenas para el uplink. En la Fig. \ref{fig:dl_drate_5GHz} se lo muestra para el downlink.
+
+\begin{figure}[ht!]
+  \centering
+  \subcaptionbox{máximo data rate para el enlace uplink.\label{fig:ul_drate_5GHz}}[.9\linewidth]{\includegraphics[height=14\baselineskip]{fotos_ema/ul_drate_5GHz.jpg}}
+
+  \subcaptionbox{máximo data rate para el enlace downlink.\label{fig:dl_drate_5GHz}}[.9\linewidth]{\includegraphics[height=14\baselineskip]{fotos_ema/dl_drate_5GHz.jpg}}
+  \caption{simulación de la máxima tasa de transferencia.}
+  \label{fig:vel_trans_datos_5}
+\end{figure}
+
+
+\subsubsection{Relación señal ruido más interferencia}
+
+A continuación, se muestra la relación señal ruido más interferencia para ambas antenas. 
+Eligiendo una modulación 16 QAM se obtiene un mayor alcance al mismo tiempo que se  compromete el data rate. 
+Debido a la distribución poblacional presente, es que se opta por realizar este compromiso. 
+Sin embargo, esto no presenta un problema ya que el data rate es suficiente. 
+En la Fig. \ref{fig:ul_snr_5} se muestra dicha relación para el uplink, mientras que en la Fig. \ref{fig:dl_snr_5} se muestra la relación para el downlink.
+
+\begin{figure}[ht!]
+  \centering
+  \subcaptionbox{relación señal-ruido más interferencia para el uplink.\label{fig:ul_snr_5}}[.9\linewidth]{\includegraphics[height=14\baselineskip]{fotos_ema/ul_snr_5.jpg}}
+
+  \subcaptionbox{relación señal-ruido más interferencia para el downlink\label{fig:dl_snr_5}}[.9\linewidth]{\includegraphics[height=14\baselineskip]{fotos_ema/dl_snr_5.jpg}}
+  \caption{relación señal-ruido más interferencia.}
+  \label{fig:snr_5}
+\end{figure}
+
+
+
+\subsubsection{Probabilidad de recepción}
+
+Para poder realizar una mejor estimación de la recepción, el programa brinda la posibilidad de obtener la probabilidad de recepción de la señal teniendo en cuenta el umbral de recepción, la potencia de transmisión y la ganancia de la antena del equipo CPE. 
+Con esto, se obtiene la Fig. \ref{fig:dl_prob_rec_5} para el downlink y la Fig. \ref{fig:ul_prob_rec_5} para el uplink.
+
+
+\begin{figure}[ht!]
+  \centering
+  \subcaptionbox{probabilidad de recepción para el downlink.\label{fig:dl_prob_rec_5}}[.9\linewidth]{\includegraphics[height=14\baselineskip]{fotos_ema/dl_prob_rec_5.jpg}}
+
+  \subcaptionbox{probabilidad de recepción para el uplink.\label{fig:ul_prob_rec_5}}[.9\linewidth]{\includegraphics[height=14\baselineskip]{fotos_ema/ul_prob_rec_5.jpg}}
+  \caption{simulación de la probabilidad de recepción.}
+  \label{fig:prob_rec_5}
+\end{figure}
+
+\clearpage
+
+\subsection{Análisis de los resultados obtenidos}
+
+Con los datos obtenidos en la simulación se procede a realizar un análisis de los mismos con el fin de obtener un radio aproximado de cobertura del servicio. 
+En la Tabla 7 se muestra una recopilación de los distintos radios mínimos medidos en el programa PropMan para los distintos datos simulados. 
+Teniendo en cuenta el datasheet del equipo elegido para la frecuencia de 2,4 GHz así como la modulación utilizada, se tiene una sensibilidad del receptor de -84 dBm. 
+Con esto se procede a obtener un radio donde la potencia alrededor del equipo AP sea mayor que dicha sensibilidad. 
+Por otro lado, se obtiene que según la modulación se necesita una SNR mínima de 18 dB. 
+Sin embargo, por precaución, se toma un área circular donde la SNIR sea al menos mayor a 25 dB. 
+Además, se obtiene el radio del área donde existe una probabilidad de conexión mayor al 80\%. 
+Con estos datos se procede a armar la Tabla 7 con el fin de determinar un radio de cobertura del servicio. 
+La posible área de cobertura se obtiene calculando un promedio de todos los valores, exceptuando la potencia mayor al umbral del receptor, al ser un valor muy alejado de la media. 
+Con esto se obtiene una posible área de cobertura que abarca un radio de 487 metros para la primera antena, y de 483 metros para la segunda antena.
+
+\begin{table}[htbp]
+  \resizebox*{\textwidth}{!}{
+    \begin{tabular}{|c|c|p{0.2\linewidth}|p{0.2\linewidth}|p{0.2\linewidth}|p{0.2\linewidth}|p{0.13\linewidth}|} \hline
+\textbf{Frecuencia} & \textbf{Antena} & \textbf{Potencia mayor al umbral del receptor} & \textbf{Probabilidad de recepción mayor al 80\%} & \textbf{Alcance del data rate} & \textbf{SNIR mayor a 25 dB} & \textbf{Posible área de cobertura} \\ 
+\hline 
+\multirow{ 2}{*}{2,4 GHz} & Antena 1 & 900 & 500 & 710 & 250 & 487 \\ 
+\cline{2-7}
+ & Antena 2 & 1200 & 530 & 690 & 230 & 483 \\ 
+ \hline 
+\end{tabular}}
+\caption{posible área de cobertura del servicio para 2.4 GHz.}
+\label{}
+\end{table}
+
+
+En el caso de la frecuencia de 5 GHz, se tiene un equipo con un umbral de recepción de -75 dBm para la modulación utilizada. Se procede a realizar lo mismo que se midió para la frecuencia de 2.4 GHz, sólo que en este caso se necesita un SNIR mayor a 24 dB. Para mayor seguridad se toma como mínimo un SNIR de 41 dB.  Con esto se obtiene la Tabla 8.
+
+\begin{table}[htbp]
+  \resizebox*{\textwidth}{!}{
+\begin{tabular}{|c|c|p{0.2\linewidth}|p{0.2\linewidth}|p{0.2\linewidth}|p{0.2\linewidth}|p{0.13\linewidth}|} \hline 
+\textbf{Frecuencia} & \textbf{Antena} & \textbf{Potencia mayor al umbral del receptor} & \textbf{Probabilidad de recepción mayor al 80\%} & \textbf{Alcance del data rate} & \textbf{SNIR mayor a 41 dB} & \textbf{Promedio} \\ \hline 
+\multirow{ 2}{*}{5 GHz} & Antena 1 & 300 & 310 & 415 & 200 & 308 \\ 
+\cline{2-7} 
+ & Antena 2 & 280 & 350 & 445 & 238 & 344 \\ \hline 
+\end{tabular}}
+\caption{Posible área de cobertura del servicio para 5 GHz.}
+\label{}
+\end{table}
+
+Finalmente, se esboza en AutoCAD la posible área de cobertura en donde se podría brindar el servicio. 
+Esto se muestra en la Fig. \ref{fig:grafico_cobertura}, en donde con color rojo se marca el área cubierta por la antena 1, mientras que en azul el área cubierta por la antena 2.
+
+\begin{figure}[htbp]
+  \centering
+  \includegraphics[width=0.8\linewidth]{fotos_ema/grafico_cobertura.jpg}
+  \caption{Gráfico de la cobertura de ambas antenas.}
+  \label{fig:grafico_cobertura}
+\end{figure}
+
+\clearpage
+\subsection{Conslusión}
+
+Con el análisis realizado en este trabajo, se puede concluir que el uso de 2 AP es suficiente para lograr la red propuesta y abarcar un total de 99 hogares, presentando así la cobertura suficiente para lograr los 83 clientes propuestos al inicio de este trabajo, ya que estos representan el 84\% del total abarcado. 
+
+Por otro lado, con la configuración elegida no se logró la tasa de transferencia bruta propuesta al inicio de este trabajo de 985 Mbps para cada AP. No obstante, esto no supondrá un problema ya que debido al sobredimensionamiento que se utilizó para el cálculo, se optó por una configuración que brinde una tasa de transferencia bruta de 967 Mbps, pero que abarque la mayor área posible.
 
 
 \clearpage
 \part{Red de fibra óptica}
 
 \section{Red troncal con fibra óptica}
+
+
+
+
+
+
 
 \section{Red de acceso con fibra óptica}
 
