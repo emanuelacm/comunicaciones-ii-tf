@@ -968,7 +968,7 @@ Los resultados se muestran en la ecuación \ref{eq:tasa_transf_int} y ecuación 
 
 \begin{figure}[htbp]
   \centering
-  \includegraphics[width=0.75\linewidth]{fotos_ema/cuadrantes_alem.jpg}
+  \includegraphics[width=\linewidth]{fotos_ema/cuadrantes_alem.jpg}
   \caption{a la izquierda la zona norte y a la derecha la zona sur de la localidad de leandro N. Alem.}
   \label{fig:cuadrantes_alem}
 \end{figure}
@@ -1166,6 +1166,67 @@ En la tabla \ref{tab:carac_CPE_24} se muestran las características de las 2 opc
 Se eligen los equipos de la marca Mikrotik para la frecuencia de 5 GHz y TP-link para la frecuencia de 2,4 GHz por la ventaja de que son extensamente comercializados en el país, de modo que es sencillo obtener repuestos o reemplazos.
 También se tuvo en consideración que son antenas económicas y muy utilizadas por los habitantes de San Luis para conectarse a las antenas del Wi-Fi del Gobierno, por lo que es probable que los clientes posean una antena actualmente que pueda ser utilizada (ahorrando el costo de compra e instalación de la misma), y que los técnicos que realizarán la instalación están familiarizados con los equipos ya que es probable que hayan trabajado anteriormente.
 
+
+
+\section{Simulación de la red propuesta}
+
+Teniendo en cuenta que la localidad de Leandro N. Alem presenta una pequeña cantidad de población distribuida en grandes extensiones de terreno, se plantea utilizar 2 equipos multipunto para poder brindar así una mejor cobertura del servicio. 
+Si bien con un equipo se puede lograr la tasa de transferencia de datos necesaria, el alcance de los mismos no es suficiente para la distribución tan irregular que presenta la localidad. 
+La ubicación de las mismas se planteó teniendo en cuenta las antenas que brindan servicio de internet gratuito por parte del gobierno de la provincia de San Luis y la cantidad de conectados a la misma. 
+La ubicación de las mismas se plantea en la Fig. \ref{fig:ubic_ap_alem}.
+
+
+
+\begin{figure}[htbp]
+  \centering
+  \includegraphics[width=0.8\linewidth]{fotos_ema/ubic_ap_alem.jpg}
+  \caption{Ubicación de los APs en la localidad de Leandro N. Alem.}
+  \label{fig:ubic_ap_alem}
+\end{figure}
+
+
+
+Se decidió la ubicación de la antena 1 debido a la gran cantidad de edificaciones presentes, y si bien existe una antena de la competencia, esta presenta una gran cantidad de conectados, lo cual deviene en un peor servicio. 
+Por otro lado, se decidió la ubicación de la antena 2, debido a que existe una cantidad importante de edificaciones, pero no se encuentran cubiertas por el rango de ninguna antena de la competencia. 
+Teniendo esto en cuenta, cada equipo deberá lograr una tasa de transferencia bruta de por lo menos 985 Mbps.
+
+Para poder realizar la simulación, con la ayuda del programa AutoCAD se procede a realizar un trazado de los edificios y de la vegetación presente en la localidad. 
+Esto se muestra en la Fig. \ref{fig:trazado_edif_autocad}, en donde se marcan detalles tales como casas, árboles, galpones, rutas y caminos, entre otros.
+
+\begin{figure}[htbp]
+  \centering
+  \includegraphics[width=0.6\linewidth]{fotos_ema/trazado_edif_autocad.jpg}
+  \caption{Trazado de edificios en AutoCAD.}
+  \label{fig:trazado_edif_autocad}
+\end{figure}
+
+Utilizando el programa WallMan, se convierte este trazado en una base de datos necesaria para la simulación de propagación con el programa PropMan. 
+La base de datos obtenida se muestra en la Fig. \ref{fig:base_datos_wallman}, en donde se observan los detalles en 3 dimensiones, teniendo cada árbol y edificio su respectiva altura designada al importar el archivo de AutoCAD al programa WallMan.
+
+
+\begin{figure}[htbp]
+  \centering
+  \includegraphics[width=0.5\linewidth]{fotos_ema/base_datos_wallman.jpg}
+  \caption{Base de datos en WallMan.}
+  \label{fig:base_datos_wallman}
+\end{figure}
+
+Teniendo la base de datos de los edificios, y la base de datos topográfica, obtenida de internet,\footnote{\href{https://opentopography.org}{OpenTopography}} se procede a comenzar la simulación en PropMan. 
+Para ello es necesario definir la interfaz aérea. 
+Debido a que la antena elegida trabaja con protocolos estandarizados, se utilizan los archivos de configuración de ejemplos otorgados por el programa. Según los requerimientos de velocidad y los protocolos a utilizar previamente expuestos, los archivos a utilizar serán para la frecuencia 2.4 GHz \textit{IEEE 802.11n 40MHz.wst }y para la frecuencia de 5 GHz \textit{IEEE 802.11ac 80MHz.wst}. 
+Posteriormente a la carga de la base de datos topográfica, la base de datos de los edificios y el archivo de interfaz aérea, se obtiene el siguiente espacio de simulación en el programa PropMan, mostrado en la Figura~8. 
+Además, en dicha figura se encuentran presentes los sitios donde se emplazarán las antenas. 
+Debido a que la antena elegida trabaja con dos bandas de frecuencia, se procederá a realizar una simulación y un análisis de los resultados obtenidos por separado.
+
+\begin{figure}[htbp]
+  \centering
+  \includegraphics[width=0.75\linewidth]{fotos_ema/sim_ubic_antenas.jpg}
+  \caption{Base de datos en WallMan.}
+  \label{fig:base_datos_wallman}
+\end{figure}
+
+
+\clearpage
 \part{Red de fibra óptica}
 
 \section{Red troncal con fibra óptica}
