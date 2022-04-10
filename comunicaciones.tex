@@ -9,13 +9,8 @@
 \usepackage{caption}
 \usepackage{hyperref}
 \usepackage{titlesec}
-\usepackage{siunitx}
-\usepackage{booktabs}
-\usepackage{array}
-\newcolumntype{C}[1]{>{\centering\arraybackslash}m{#1}}
 \usepackage{multirow}
 \usepackage{subcaption}
-\usepackage{hhline}
 \usepackage{wrapfig}
 \usepackage{lscape}
 \usepackage{rotating}
@@ -515,9 +510,8 @@ Multiplicando esta cantidad de clientes por el ancho de banda se obtiene la tasa
 
 
  \clearpage 
-\part{Red inalámbrica}
 
-
+ \part{Red troncal}
 
 \section{Red troncal con radioenlace}
 
@@ -702,9 +696,8 @@ En la tabla \ref{tab:altura_antenas}, se muestran las coordenadas de las antenas
 \end{table}%
 
 A continuación en la Fig. \ref{fig:enlaces_radiom}, se muestran los tres enlaces implementados en el programa \textit{Radio Mobile}. 
-Para una mejor visualización, se procede a presentar los distintos tramos implementados en las figuras \ref{fig:con_directa}, \ref{fig:con_alt} y \ref{fig:con_alt2}.
 
-Una vez emplazadas las antenas, se procede a simular las distintas conexiones, obteniendo así más detalles de los enlaces, así como las zonas de Fresnel, las pérdidas y la P.I.R.E. En las figuras \ref{fig:sim_directa}, \ref{fig:sim_alt} y \ref{fig:sim_alt2} se presentan los datos obtenidos para la conexión directa, el primer enlace alternativo y el segundo enlace alternativo, respectivamente. 
+Una vez emplazadas las antenas, se procede a simular las distintas conexiones, obteniendo así más detalles de los enlaces, así como las zonas de Fresnel, las pérdidas y la P.I.R.E. En la figura \ref{fig:sim_directa} se presentan los datos obtenidos para la conexión directa. 
 
 
 \begin{figure}[htbp]
@@ -733,70 +726,10 @@ En la Fig. \ref{fig:sim_directa} se muestra el resultado de la simulación, demo
   \label{fig:sim_directa}
 \end{figure}
 
-\subsubsection{Primera conexión alternativa con repetidor}
-En la Fig. \ref{fig:con_alt} se presenta el tramo entre Leandro N. Alem y el repetidor de la primera conexión alternativa, y la conexión entre ese repetidor y Quines.
 
-\begin{figure}[ht!]
-  \centering
-  \subcaptionbox{conexión alternativa entre Leandro N. Alem y el repetidor.}%
-  [.48\linewidth]{\includegraphics[height=11\baselineskip]{fotos_ema/con_alt_alem_rep.jpg}}%
-  \subcaptionbox{conexión alternativa entre el repetidor y Quines.}
-  [.48\linewidth]{\includegraphics[height=11\baselineskip]{fotos_ema/con_alt_rep_quines.jpg}}
-  \caption{conexión alternativa entre Leandro N. Alem y Quines.}
-  \label{fig:con_alt}
-\end{figure}
-
-En la Fig. \ref{fig:sim_alt} se presenta la simulación obtenida para el tramo entre Leandro N. Alem y el repetidor de la primera conexión alternativa, y la simulación de la conexión entre ese repetidor y Quines.
-Gracias a dicha simulación se comprueba el funcionamiento teorico del enlace.
-Esta alternativa presenta la ventaja de que las alturas necesarias para las antenas no son tan altas como para la conexión directa.
-Sin embargo, es necesario usar más torres y equipos de transmisión lo cual no solo presenta mayores costos, sino también mayores problemas a la hora de tramitar permisos y mantener la instalación.
-
-\begin{figure}[ht!]
-  \centering
-  \subcaptionbox{simulación de la conexión alternativa entre Leandro N. Alem y el repetidor.}%
-  [.48\linewidth]{\includegraphics[height=10\baselineskip]{fotos_ema/sim_alt_alem_rep}}%
-  \hfill%
-  \subcaptionbox{simulación de la conexión alternativa entre el repetidor y Quines.}
-  [.48\linewidth]{\includegraphics[height=10\baselineskip]{fotos_ema/sim_alt_rep_quines}}
-  \caption{simulación de la conexión alternativa entre Leandro N. Alem y Quines.}
-  \label{fig:sim_alt}
-\end{figure}
-
-\clearpage
-
-\subsubsection{Segunda conexión alternativa con repetidor}
-
-A continuación, se presenta en la Fig. \ref{fig:con_alt2}, la conexión entre la localidad de Leandro N. Alem y el repetidor de la segunda conexión alternativa, y la conexión entre dicho repetidor y Quines.
+En el trabajo práctico N$^{\text{o}}3$ se pueden analizar las simulaciones de los demás enlaces, así como el cálculo del presupuesto de potencia completo para el enlace directo\footnote{\href{https://docs.google.com/document/d/1dYO6yN0Ze9tsv_Ijca2n36-JYDfShurftSzc-x_Jx1I}{Trabajo Práctico N$^{o}$ 1 "Red troncal con radioenlace"}}, el cual verifica de manera analítica la viabilidad del enlace directo propuesto.
 
 
-\begin{figure}[ht!]
-  \centering
-  \subcaptionbox{segunda conexión alternativa entre Leandro N. Alem y el repetidor.}%
-  [.48\linewidth]{\includegraphics[height=8.5\baselineskip]{fotos_ema/con_alt2_alem_rep.jpg}}%
-  \hfill%
-  \subcaptionbox{segunda conexión alternativa entre el repetidor y Quines.}
-  [.48\linewidth]{\includegraphics[height=8.5\baselineskip]{fotos_ema/con_alt2_rep_quines.jpg}}
-  \caption{segunda conexión alternativa entre Leandro N. Alem y Quines.}
-  \label{fig:con_alt2}
-\end{figure}
-
-En la Fig. \ref{fig:sim_alt2} se presenta la simulación obtenida para el tramo entre Leandro N. Alem y el repetidor de la primera conexión alternativa, y la simulación de la conexión entre ese repetidor y Quines.
-Gracias a dicha simulación se comprueba el funcionamiento teorico del enlace.
-Al igual que la anterior, esta alternativa presenta la ventaja de que las alturas necesarias para las antenas no son tan altas como para la conexión directa, pero también es necesario usar más torres y equipos de transmisión. 
-La diferencia con la opción anterior radica en una menor altura en total, sumando las alturas de todas las antenas.
-
-\begin{figure}[ht!]
-  \centering
-  \subcaptionbox{simulación de la segunda conexión alternativa entre Leandro N. Alem y el repetidor.}%
-  [.48\linewidth]{\includegraphics[height=10\baselineskip]{fotos_ema/sim_alt2_alem_rep}}%
-  \hfill%
-  \subcaptionbox{simulación de la segunda conexión alternativa entre el repetidor y Quines.}
-  [.48\linewidth]{\includegraphics[height=10\baselineskip]{fotos_ema/sim_alt2_rep_quines}}
-  \caption{simulación de la segunda conexión alternativa entre Leandro N. Alem y Quines.}
-  \label{fig:sim_alt2}
-\end{figure}
-
-\clearpage
 \subsubsection{Elección del tipo de enlace}
 Observando los distintos enlaces propuestos, se decide optar por la conexión directa, ya que la misma presenta las siguientes ventajas:
 
@@ -811,97 +744,250 @@ Observando los distintos enlaces propuestos, se decide optar por la conexión di
   Al colocar un repetidor en un radio cercano al emisor, se está desaprovechando esta capacidad, sobredimensionando el sistema, debido a que no existe un equipo que cubra menores distancias pero que cuente con las tasas de transferencia de bits necesarias.
 \end{itemize}
 
-\subsection{Cálculos analíticos}
+\section{Red troncal con fibra óptica}
 
-\subsubsection{Ganancia del sistema}
-
-Teniendo en cuenta los elementos en el sistema que contribuyen positivamente a aumentar la potencia de la señal podemos considerar a estos como ganancias en el sistema. Entre estos elementos consideramos a:
-
-\begin{itemize}
-  \item  La potencia de Tx ($P_{TX}$[dBm]) que corresponde a la potencia de RF que puede entregar el equipo. En este caso la potencia del transmisor AirFiber 5X HD es de 24 dBm como muestra la tabla \ref{tab:equipo_tronc_wireless}. 
-
-  \item  La ganancia de la antena  ($G_{TX}$[dB])  utilizada es de 34 dBi mostrada en la tabla \ref{tab:equipo_tronc_wireless}.  
-  La antena junto con el transmisor anteriormente mencionado se encuentra ubicado en en la localidad de Quines con LOS hacia la antena receptora ubicada en Leandro N. Alem. 
-
-  \item  La sensibilidad de Rx ($S_{RX}$[dBm]) que indica cuanta potencia necesita el receptor para poder interpretar los datos recibidos es de -65 dBm como muestra la tabla \ref{tab:equipo_tronc_wireless}.
-\end{itemize}
-
-\subsubsection{Pérdidas del sistema}
-
-A continuación se tienen en cuenta los elementos en el sistema que contribuyen negativamente en el sistema y son tomados como pérdidas para el mismo: 
-
-\begin{itemize}
-  \item  Los conectores (${At}_1$[dB]) que son empleados para inyectar la señal RF en el cable hacia la antena se presentan como una pérdida para el sistema de aproximadamente 0,5 dB.
-
-  \item  Los cables (${At}_2$[dB]) que son empleados para llevar la señal de RF a la antena también presentan pérdidas de potencia en la señal y esta depende del tipo de cable. Dado que el equipo utilizado es de tipo all outdoor, las pérdidas son despreciables.
-
-  \item  Las atenuaciones en el espacio libre ($L_b$[dB]) expresada como:
-  \begin{equation}
-    L_b=20\log{D} [\text{ km}]+20\log{f} [\text{ GHz}]+92,45
-    \label{eq:at_free_sp}
-  \end{equation}
-  Donde $D$ es la distancia entre antenas y $\ f$ es la frecuencia de portadora. 
-
-  La distancia entre la antena transmisora y la antena receptora es $D=34,48$ km y $f=5,775$ GHz, reemplazando en la ecuación \ref{eq:at_free_sp}, la atenuación por espacio libre da como resultado:
-  \begin{equation*}
-    L_b=20\log{34,48}+20\log{5,775}+92,45=138.43 \text{ dB} 
-  \end{equation*}
-  
-
-\end{itemize}
-
-
-\subsubsection{Presupuesto de potencia completo}
-  
-Para realizar el presupuesto de enlace se utilizó la ecuación de FRIIS:
-
-\begin{equation}
-  P_{TX}[\text{dBm}]-S_{RX}[\text{dBm}] \geq \Sigma \text{ Pérdidas} -\Sigma\text{ Ganancias} + \text{FM}
-  \label{eq:friis} 
-\end{equation}
+\subsection{Trayectoria y tipo de instalación que se realizará}
 
 
 
-Donde la sumatoria de las pérdidas involucra a las pérdidas por conectores, por cables y por el espacio libre  mencionadas anteriormente. 
-Por otro lado la sumatoria de las ganancias corresponde a las ganancias de las antenas y FM es el margen de desvanecimiento que permite considerar las características no ideales y menos predecibles de la propagación de las ondas radioeléctricas en el espacio libre, como las pérdidas por trayectos múltiples y la sensibilidad del terreno.
+Un recorrido en línea recta entre ambas localidades sería el caso ideal y de menor distancia necesaria, pero implicaría una gran inversión en estructuras para poder transportar la fibra de forma aérea o en excavación en el caso que se haga de forma subterránea. 
+Por lo tanto, debido al tipo de terreno montañoso que poseen los pueblos a unir, la conexión de fibra óptica se realizará de forma aérea usando el tendido de media tensión que une Quines y Leandro N. Alem, pasando por Luján.
 
-Para calcular el margen de desvanecimiento FM se utiliza la ecuación de Barnett-Vignant.
-\begin{equation}
-  \text{FM}=30\log{D}[\text{km}]+10\log{(6ABf)}[\text{GHz}]-10\log{(1-R)}-70
-  \label{eq:vignant}
-\end{equation}
-
-Donde :
-
-\begin{itemize}
-\item   R es la Confiabilidad y se expresa en decimales (de 0 a 1); típica: 0,995
-\item  (1-R) es el objetivo de confiabilidad para una trayectoria de 400 km en un solo sentido o dirección
-\item   A es el factor de rugosidad: A = 1 sobre terreno normal promedio.
-\item   B es el factor para convertir una probabilidad del peor mes a una probabilidad anual: B = 1 para una disponibilidad anual a una base para el peor mes.
-\end{itemize}
-
-Reemplazando en la ecuación \ref{eq:vignant} se obtiene: 
-
-\begin{eqnarray}
-  \text{FM}&=&30\log{34,48}[\text{km}]+10\log{(6*1*1*5,775)}[\text{GHz}]-10\log{(1-0.995)}-70 \nonumber\\
-  \text{FM}&=&14.53\text{ dB}
-  \label{eq:res_vignant}
-\end{eqnarray}
+La elección de usar el tendido eléctrico presenta un gran ahorro, ya que se utilizarán estructuras ya existentes. 
+En las Fig. \ref{fig:tendido_media_tension_quines_lujan} y Fig. \ref{fig:tendido_media_tension_lujan_alem} se observa en verde el recorrido que realiza el tendido eléctrico de media tensión desde el centro de Quines hasta Luján y desde Luján hasta Leandro N. Alem, respectivamente.
+Este análisis se realizó usando la herramienta Visor SIG \footnote{\href{https://sig.se.gob.ar/visor/visorsig.php?t=1}{Visor SIG}}.
 
 
-Finalmente, reemplazando los resultados obtenidos de la ecuación \ref{eq:at_free_sp} y ecuación \ref{eq:res_vignant} en la ecuación \ref{eq:friis}: 
+\begin{figure}[ht!]
+  \centering
+  \subcaptionbox{tendido de media tensión desde Quines hasta Luján.\label{fig:tendido_media_tension_quines_lujan}}[.49\linewidth]{\includegraphics[height=11\baselineskip]{fotos_ema/tendido_media_tension_quines_lujan.jpg}}
+  \hfill
+  \subcaptionbox{tendido de media tensión desde Luján hasta Leandro N. Alem.\label{fig:tendido_media_tension_lujan_alem}}[.49\linewidth]{\includegraphics[height=11\baselineskip]{fotos_ema/tendido_media_tension_lujan_alem.jpg}}
+  \caption{tendido de media tensión}
+  \label{fig:tendido_media_tension}
+\end{figure}
 
-\begin{eqnarray*}
-  G_S[\text{dB}]&=&P_{TX}[\text{dBm}]-S_{RX}[\text{dBm}] \geq (L_{TT}+L_b+L_{TR}) -(G_{TX}+G_{RX})+FM \\ 
-G_S[\text{dB}]&=&24-(-65) \geq  (138.43+0,5)-(34+34)+14,53 \\ 
-G_S[\text{dB}]&=&89 \geq 85.03 
-\end{eqnarray*}
 
-Comparando las ganancias y las pérdidas, se puede concluir que el enlace es viable. 
-Hay una diferencia de 3,97 dB como margen adicional frente a otras posibles interferencias. 
-Sumando esta diferencia con el margen de desvanecimiento FM podemos obtener un valor de Rx relativo igual a 18,5 dB. 
-El Rx relativo se diferencia en 6,6 dB del calculado por el software Radio Mobile, siendo este de 11,9 dB como muestra la Fig. \ref{fig:sim_directa}. 
-Esto se debe a que el software tiene en cuenta otros parámetros que no aparecen en la ecuación de FRIIS, como pérdidas por bosque y otro tipo de obstrucciones.
+La Fig. \ref{fig:dist_quines_lujan_tendido_media_v} y Fig. \ref{fig:dist_quines_alem_tend_media_v} muestran las distancias que recorre el tendido eléctrico desde el centro de Quines hasta Luján y desde Quines hasta Leandro N. Alem, las cuales son 20556 Km y 37504 Km respectivamente. 
+
+\begin{figure}[ht!]
+  \centering
+  \subcaptionbox{Distancia desde Quines hasta Luján por medio de tendido eléctrico de media tensión.\label{fig:dist_quines_lujan_tendido_media_v}}[.49\linewidth]{\includegraphics[height=11\baselineskip]{fotos_ema/dist_quines_lujan_tendido_media_v.jpg}}
+  \hfill
+  \subcaptionbox{Distancia desde Quines hasta Leandro N. Alem por medio de tendido eléctrico de media tensión.\label{fig:dist_quines_alem_tend_media_v}}[.49\linewidth]{\includegraphics[height=11\baselineskip]{fotos_ema/dist_quines_alem_tend_media_v.jpg}}
+  \caption{distancia teniendo en cuenta el tendido de media tensión}
+  \label{fig:dist_tendido_media_tension}
+\end{figure}
+
+
+
+A la distancia final de 37504 Km que debe recorrer la fibra óptica para unir estas dos localidades se le debe sumar un 10\% para considerar los rollos de ganancia que se formarán en cada empalme\footnote{\href{https://www.teldor.com/files.php?actions=show&id=7655}{ADSS Installation Guide}} lo que da una distancia final de 41254 Km.
+
+Otro medio que se puede usar para transportar la fibra óptica desde Quines hasta Leandro N. Alem, es a través del tendido de alta tensión que se ve en color rojo en la Figura 5.
+Este camino se descarta, ya que se necesitan estructuras para llegar a Leandro N. Alem y el recorrido es mayor, por lo que se necesita mayor cantidad de fibra. 
+Además, conseguir permiso para colocar fibra óptica en estos tendidos es algo muy costoso y difícil.
+
+\begin{figure}[htbp]
+  \centering
+  \includegraphics[width=0.5\linewidth]{fotos_ema/dist_quines_alem_tend_alta_v.jpg}
+  \caption{distancia desde Quines hasta Leandro N. Alem por medio de tendido eléctrico de alta tensión.}
+  \label{fig:dist_quines_alem_tend_alta_v}
+\end{figure}
+
+Se deben de tener en cuenta todas las medidas de seguridad debido a que se estará trabajando con postes que ya llevan un tendido eléctrico. 
+Estos poseen una distancia de 80 metros entre sí aproximadamente. 
+Primero se instalará el fiador entre vano y vano, el cual será una base para la instalación, seguidamente se colocará el guía cable y fijador al fiador los cuales facilitarán el tendido de la fibra en el vano. 
+El artículo del sitio web Conectronica\footnote{\href{https://www.conectronica.com/fibra-optica/curso-fibra-optica/tipos-de-instalacion-de-fibra-optica}{Tipos de Instalación de Fibra óptica, Conectores}} ofrece los pasos recomendados a seguir en la instalación de fibra óptica de forma aérea.
+
+\begin{figure}[htbp]
+  \centering
+  \includegraphics[width=0.7\linewidth]{fotos_ema/esq_inst_fo.jpg}
+  \caption{esquema de instalación aérea de fibra óptica.}
+  \label{fig:esq_inst_fo}
+\end{figure}
+
+El fiador deberá estar ajustado debidamente a un soporte A.D.S.S. \footnote{\href{https://www.preform.com.ar/tienda/telecomunicaciones/redes-de-fibra-adss/suspenciones/kit-retencion-adss-prolongador-grillete-y-preformado-120-mts/}{KIT SUSP ADSS MENSULA SUSPENSIÓN URBANA ( ARO Y ATADURA) ( HASTA 80 MTS)}} como el de la Fig. \ref{fig:soporte_adss} , ya que en él reposará el cable de fibra óptica. 
+
+\begin{figure}[htbp]
+  \centering
+  \includegraphics[width=0.7\linewidth]{fotos_ema/soporte_adss.jpg}
+  \caption{Soporte A.D.S.S.}
+  \label{fig:soporte_adss}
+\end{figure}
+
+
+A una distancia de 1,50 metros se colocarán dos abrazaderas, una de fijación y la otra que abrazará al cable propiamente dicho, dejando un radio de curvatura mínima de la fibra entre abrazaderas. Esto se puede observar en la Fig. \ref{fig:esq_col_abrazadera}.
+
+
+\begin{figure}[htbp]
+  \centering
+  \includegraphics[width=0.7\linewidth]{fotos_ema/esq_col_abrazadera.jpg}
+  \caption{Esquema de colocación de abrazaderas.}
+  \label{fig:esq_col_abrazadera}
+\end{figure}
+
+
+
+%==================================================================================
+
+En cuanto a la instalación, al momento del armado de ganancias se deberá usar una regleta tipo cruz\footnote{\href{https://articulo.mercadolibre.com.ar/MLA-909799496-cruz-de-reserva-100-x-100cm-galvanizada-para-fibra-optica-_JM?matt_tool=88481412&matt_word=&matt_source=google&matt_campaign_id=11618987428&matt_ad_group_id=113657532672&matt_match_type=&matt_network=g&matt_device=c&matt_creative=479785004862&matt_keyword=&matt_ad_position=&matt_ad_type=pla&matt_merchant_id=308510455&matt_product_id=MLA909799496&matt_product_partition_id=841218013617&matt_target_id=pla-841218013617&gclid=CjwKCAjw_JuGBhBkEiwA1xmbRUsQ-48g75U_LS2OkDkasr5E-iXwDYYjTvlZx3yOGCESphlHs3DjdhoC0lEQAvD_BwE }{Regleta tipo cruz}} como la de la Fig. \ref{fig:regleta_ruz}, la cual deberá tener un diámetro acorde a la curvatura máxima tolerable por la fibra para mantener la integridad del enlace.
+
+\begin{figure}[htbp]
+  \centering
+  \includegraphics[width=0.4\linewidth]{fotos_ema/regleta_ruz.jpg}
+  \caption{Regleta tipo cruz.}
+  \label{fig:regleta_ruz}
+\end{figure}
+
+
+Al realizar un empalme se puede optar ya sea por caja de empalme estaca como la mostrada en la Figura \ref{fig:caja_empalme} o cierres de empalme como se muestran en la Fig. \ref{fig:cierres_empalma}.
+
+
+\begin{figure}[ht!]
+  \centering
+  \subcaptionbox{Caja de empalme estaca.\label{fig:caja_empalme}}[.49\linewidth]{\includegraphics[height=7\baselineskip]{fotos_ema/caja_empalme.jpg}}
+  \hfill
+  \subcaptionbox{Cierres de empalme.\label{fig:cierres_empalma}}[.49\linewidth]{\includegraphics[height=7\baselineskip]{fotos_ema/cierres_empalma.jpg}}
+  \caption{Opciones de empalme}
+  \label{fig:opciones_empalme}
+\end{figure}
+
+
+Los dos puntos anteriores de la instalación quedan ilustrados en la Fig. \ref{fig:inst_gan_emp_fo}.
+
+
+\begin{figure}[htbp]
+  \centering
+  \includegraphics[width=0.35\linewidth]{fotos_ema/inst_gan_emp_fo.jpg}
+  \caption{Instalación de ganancia y empalme de fibra óptica.}
+  \label{fig:inst_gan_emp_fo}
+\end{figure}
+ 
+%==================================================================================
+\subsection{Determinación del tipo de cable de fibra óptica}
+
+Teniendo en cuenta las largas distancias que se desean cubrir es que se opta por elegir una fibra óptica monomodo, ya que permite cubrir trayectos mayores a 10 km, manteniendo altas velocidades de transmisión de datos. 
+Por otro lado, debido a que se transportará el cable utilizando las instalaciones de media tensión, es necesario que el cable sea del tipo A.D.S.S., lo cual significa que es autosoportado y totalmente dieléctrico. 
+Esto brinda seguridad a la instalación y posterior mantenimiento tanto del tendido eléctrico como del tendido de la fibra. 
+
+En el trabajo práctico N$^{\text{o}}$ 4  se analizan 3 tipos de cables, cada uno posee un tipo de fibra que se corresponde con las distintas normas de la UIT-T\footnote{\href{https://docs.google.com/document/d/1yDd0ZPVQQ6xVwB_qNpXz09s-V0TPoRrC3KIsim4-Geg/edit}{Trabajo Práctico N$^{\text{o}}$ 4 "Red de Troncal con Fibra Óptica"}}. A continuación, se muestra en la tabla \ref{tab:fo_options}, una comparativa con las distintas características físicas que brindan las hojas técnicas de los distintos modelos:
+
+\begin{table}[htbp]
+  \centering
+\begin{tabular}{|c|c|c|c|} \hline 
+\textbf{Características} & \textbf{Opción 1} & \textbf{Opción 2} & \textbf{Opción 3} \\ 
+\hline 
+\textbf{Marca} & Optral \tablefootnote{\href{https://fibromarket.com/fichas/cables/cable_antirroedor-de-fibra-de-vidrio-optral-sm.pdf}{Opción 1}} & GLC & Cablena \\ 
+\hline 
+\textbf{Modelo} & - & GLCADSS80-6/12 \tablefootnote{\href{https://glctec.com/wp-content/uploads/2022/01/catalogo_2022-1.pdf}{Opción 2, página 29}} & ETP-FO-003\tablefootnote{\href{https://fibromarket.com/fichas/cables/cable_adss_12_fo_etp-fo-003_-_asu_cablena-fibromarket.pdf}{Opción 3}} \\ \hline 
+\textbf{Largo por bobina} & 4,2 km & 4 km & - \\ 
+\hline 
+\textbf{Norma} & G.652.B & G.652.D & G.655 \\ 
+\hline 
+\textbf{Cantidad de pelos} & 6 & 6/12 & 12 \\ 
+\hline 
+\textbf{Distancia entre vanos} & - & 80 m & 80 m \\ 
+\hline 
+\end{tabular}
+\caption{opciones de cables de fibra óptica.}
+\label{tab:fo_options}
+\end{table}
+
+Teniendo en cuenta lo analizado, las fibras que se corresponden con la norma G.655, se encuentran optimizadas para trabajar con señales en la banda de 1550 nm.
+Esto conlleva un problema a la hora de elegir los equipos transceptores debido a que generalmente se utilizan distintas bandas para una transmisión bidireccional en un solo cable, mientras que este tipo de fibra cuenta con un rango muy escaso de operación, resultando en mayores costos al necesitar dos pelos, uno para la trasmisión y otro para la recepción.
+
+Para poder decidir sobre las dos opciones restantes será necesario obtener más información sobre los equipos transceptores y en qué frecuencias pueden operar, debido a que la fibra óptica que se corresponde con la norma G.652.B posee un pico de agua que limita las bandas que puede utilizar el equipo.
+
+%=================================================================================
+
+\subsection{Determinación de los equipos}
+
+\subsubsection{Switches}
+
+Para la implementación de la comunicación, se presentan en el práctico 3 equipos de switches que serán los que coordinen la transmisión y recepción de datos, uno de la marca Cisco y otros 2 de la marca Ubiquiti. 
+
+Del análisis de los equipos se determina que el equipo más completo es la opción 3, siendo el switch de la marca Ubiquiti modelo ES 48 LITE EdgeSwitch, ya que admite los 3 tipos de conectores utilizados en la transmisión de datos, ethernet, SFP y SFP+. 
+Además, este presenta la mayor cantidad de puertos Ethernet, los cuales jugarán un rol importante a la hora de distribuir los datos a los distintos clientes. 
+Como desventaja, este equipo presenta el mayor consumo de los 3, pero debido a la cantidad de puertos y su bajo precio, se considera esta desventaja como insignificante. 
+
+\subsubsection{Transceptores}
+
+Teniendo en cuenta los puertos presentes en el switch seleccionado, se procede a buscar los módulos SFP y SFP+ que permitirán la comunicación a través de la fibra óptica.  
+Del análisis realizado en el trabajo práctico N$^\text{{o}}$ 3, para no incurrir en mayores gastos, se elige la opción 1 para realizar un posterior cálculo del enlace, ya que a pesar de que hay que importarla, es económica. 
+Este es el módulo SFP bidireccional de la marca FS, modelo SFP-GE-BX80, el cual soporta distancias de hasta 80 kilómetros.
+
+%==============================================================================
+
+Debido a las velocidades de transmisión que presenta el equipo elegido previamente y la tasa de transferencia necesaria para este proyecto, es que basta con la utilización de 1 pelo de fibra óptica para cumplir los requerimientos. 
+Teniendo en cuenta las longitudes de onda que se utilizan en ambos tipos de fibra y la recomendación del fabricante, ambos cables son compatibles con este dispositivo, ya que el mismo no opera en la banda E. 
+Más aún, las atenuaciones y las pérdidas para las bandas utilizadas, S y C, son las mismas en ambos tipos de fibra\footnote{\href{https://www.belden.com/blogs/reusing-singlemode-fiber-here-s-what-the-g-652d-and-g-657a1-standards-have-to-say\ }{G652D and G 657A1 standards}}.
+
+
+\subsection{Propuestas de enlace}
+
+En el trabajo práctico se presentaron y analizaron dos alternativas de enlaces. 
+A continuación se muestran los esquemas de conexión para cada uno de ellos.
+
+\subsubsection{Enlace directo}
+\label{section:enl_dir}
+
+En la Fig. \ref{fig:esq_enl_directo}, se observa un esquema de la conexión, mostrando empalmes, conectores y equipos utilizados en la implementación del enlace. 
+Esto permite brindar una idea más gráfica del enlace, lo cual será útil para posteriores cálculos tanto económicos como técnicos.
+
+
+\begin{figure}[htbp]
+  \centering
+  \includegraphics[width=0.7\linewidth]{fotos_ema/esq_enl_directo.jpg}
+  \caption{Esquema del enlace.}
+  \label{fig:esq_enl_directo}
+\end{figure}
+
+
+Los resultados de los análisis realizados indican que el enlace es viable, incluso si la potencia utilizada es la mínima. 
+Aún más, se respeta el margen mayor a 5 dB previamente indicado, lo cual brinda mayor certeza en la viabilidad de la instalación.
+
+ \subsubsection{Enlace alternativo}
+
+Se propone colocar una estación repetidora en la localidad de Luján. 
+Esto con el objetivo de incluir a Luján como posible zona comercial, y además brindar una alternativa a la instalación en el caso de que no se cuente con la posibilidad de importar el módulo de la opción 1, el presupuesto no sea lo suficientemente alto como para adquirir el módulo de la opción 4, o no se consiga stock de los mismos, dejando como opción disponible la opción 3, de la cual existen alternativas en el mismo margen de precio\footnote{\ $  $Alternativas\ }. 
+Para esto se utilizará el mismo switch que se seleccionó previamente, el cual como posee 2 entradas SFP, es posible usar una entrada para el tramo Quines-Luján y otra para el tramo Luján-Leandro N. Alem. 
+Teniendo en cuenta que la distancia calculada entre Quines y Luján es de 20,55 Km y la distancia entre Luján y Leandro N. Alem es de 16,95 Km, se procede a calcular nuevamente los enlaces, esta vez por tramos. 
+Los datos son los mismos que los mostrados previamente, variando la distancia en kilómetros, la cantidad de empalmes y conectores utilizados. 
+
+Se considera una distancia  de 22,65 km para el tramo Quines-Luján, y una distancia de 18,65 km para el tramo Luján-Leandro N. Alem. 
+Se considerarán 8 conectores, 2 en Leandro N. Alem, 2 en Quines y 4 en Luján. Además se tienen 13 empalmes, 7 empalmes entre Quines y Luján y 6 empalmes entre Luján y Leandro N. Alem. 
+En la Figura 15 se muestra un esquema de la conexión representando los empalmes, los equipos y las localidades presentes. 
+
+
+\begin{figure}[htbp]
+  \centering
+  \includegraphics[width=0.7\linewidth]{fotos_ema/esq_enl_lujan.jpg}
+  \caption{Esquema de conexión alternativa.}
+  \label{fig:esq_enlace_lujan}
+\end{figure}
+
+
+\paragraph{Tramo Quines-Luján:}
+
+
+Se observa como resultado que el enlace es viable tanto para la mínima como para la máxima potencia que ofrece el módulo, debido a que se respeta incluso el margen de 5 dB que se elige como referencia de posibles errores adicionales de instalación y/o imperfecciones en la fibra.
+
+\paragraph{Tramo Luján-Leandro N. Alem}
+
+Se muestra en la tabla \ref{tab:enl_lujan_alem} el cálculo del enlace. Se considera un $N_2$igual a 0,32 debido a que existen 6 empalmes en 18,65 Km, dando como resultado dicho número. 
+
+
+Se observa como resultado que el enlace es viable tanto para la mínima como para la máxima potencia que ofrece el módulo, debido a que se respeta incluso el margen de 5 dB que se elige como referencia de posibles errores adicionales de instalación y/o imperfecciones en la fibra. 
+Es por ello que con la decisión de colocar una estación repetidora en Luján, es posible obtener 2 opciones de enlaces viables que aseguren la comunicación entre los equipos.
+
+\subsubsection{Conclusión}
+
+Como se demostró en la sección \ref{section:enl_dir}, el enlace de fibra óptica es viable desde Quines hasta Leandro L. Alem sin necesidad de hacer uso de un repetidor o amplificador. 
+De igual manera, el uso de un repetidor en la localidad de Luján abre las puertas a expandir la cantidad de posibles clientes en un futuro y permitir así una fácil amortización de la inversión.
+
+
+\clearpage
+\part{Red de acceso}
 
 \section{Red de acceso con radioenlace}
 
@@ -973,7 +1059,7 @@ Los resultados se muestran en la ecuación \ref{eq:tasa_transf_int} y ecuación 
 
 \begin{figure}[htbp]
   \centering
-  \includegraphics[width=\linewidth]{fotos_ema/cuadrantes_alem.jpg}
+  \includegraphics[width=0.8\linewidth]{fotos_ema/cuadrantes_alem.jpg}
   \caption{a la izquierda la zona norte y a la derecha la zona sur de la localidad de leandro N. Alem.}
   \label{fig:cuadrantes_alem}
 \end{figure}
@@ -1005,115 +1091,34 @@ Sin embargo, esta tasa de transferencia se distribuye entre los equipos cuando l
 \subsection{Elección de los puntos de acceso}
 
 La elección de los AP se basó en la tasa de transferencia necesaria calculada en el punto anterior. 
-A continuación se mostrarán las características de los dos equipos AP que se analizaron: Aruba AP-375 y Altai A3-Ei.
+A continuación en la tabla \ref{tab:carac_ap} se muestran las características de los dos equipos AP que se analizaron: Aruba AP-375 y Altai A3-Ei.
 
-En la tabla \ref{tab:carac_aruba_AP375} se observa la potencia del transmisor y la sensibilidad de recepción del equipo Aruba AP-375, además de su familia de protocolos, tipo de antena y tasa de transferencia\footnote{\href{https://www.arubanetworks.com/assets/ds/DS_AP370Series.pdf}{Datasheet Aruba AP-375}}. 
+En la tabla se observa la potencia del transmisor y la sensibilidad de recepción de los equipos, además de su familia de protocolos, tipo de antena y tasa de transferencia. 
 Tanto la potencia del transmisor, como la sensibilidad del receptor, poseen un rango de valores que varía dependiendo el tipo de modulación elegida.
 
-\subsubsection{Características Aruba AP-375}
 
 \begin{table}[htbp]
   \resizebox*{\textwidth}{!}{
 \centering
-\begin{tabular}{|p{0.1\textwidth}|p{0.2\textwidth}|p{0.2\textwidth}|p{0.2\textwidth}|p{
+\begin{tabular}{|c|p{0.1\textwidth}|p{0.2\textwidth}|p{0.2\textwidth}|p{0.2\textwidth}|p{
 0.2\textwidth}|p{0.1\textwidth}|} 
 \hline 
-\textbf{Banda de frecuencia} & \textbf{Tasa de transmisión} & \textbf{Antena} & \textbf{Rango potencia transmisor} & \textbf{Rango sensibilidad receptor} & \textbf{Familia protocolos} \\ 
+\textbf{Modelo de antena}&\textbf{Banda de frecuencia} & \textbf{Tasa de transmisión} & \textbf{Antena} & \textbf{Rango potencia transmisor} & \textbf{Rango sensibilidad receptor} & \textbf{Familia protocolos} \\ 
 \hline 
-2,4 GHz & Hasta 300 Mbps & 2x2 MIMO\newline omnidireccional  & Max: 23 dBm\newline Min: 18 dBm & Min: -93 dBm\newline Max: -71 dBm & 802.11n \\ 
+\multirow{ 2}{*}{Aruba AP-375\tablefootnote{\href{https://www.arubanetworks.com/assets/ds/DS_AP370Series.pdf}{Datasheet Aruba AP-375}}}&2,4 GHz & Hasta 300 Mbps & 2x2 MIMO\newline omnidireccional  & Max: 23 dBm\newline Min: 18 dBm & Min: -93 dBm\newline Max: -71 dBm & 802.11n \\ 
+\cline{2-7}
+&5 GHz & 1733 Mbps & 4x4 MU-MIMO\newline omnidireccional & Max: 22 dBm\newline Min: 15 dBm & Min: -87 dBm\newline Max: -61 dBm & 802.11ac \\ 
 \hline 
-5 GHz & 1733 Mbps & 4x4 MU-MIMO\newline omnidireccional & Max: 22 dBm\newline Min: 15 dBm & Min: -87 dBm\newline Max: -61 dBm & 802.11ac \\ 
-\hline 
+\multirow{ 2}{*}{Altai A3-Ei\tablefootnote{\href{https://www.altaitechnologies.com/portfolio-item/a3-ei/}{Datasheet Altai A3-Ei}}} &2,4 GHz & Hasta 450 MBps & 3x3:3 MIMO & Max:30 dBm \newline Min: 25 dBm & HT20: -92dBm \newline HT40: -88dBm & 802.11n \\ 
+\cline{2-7}
+&5 GHz & Hasta 1300 MBps & 3x3:3 MIMO & Max:30 dBm \newline Min: 25 dBm & HT20: -92dBm \newline HT40: -88dBm & 802.11ac \\ 
+\hline
 \end{tabular}}
-\caption{características de AP Aruba AP-375.}
-\label{tab:carac_aruba_AP375}
+\caption{características de los puntos de accesos considerados.}
+\label{tab:carac_ap}
 \end{table}
 
-Al analizar el equipo en la frecuencia de 2,4 GHz por medio de su datasheet se puede observar en la tabla \ref{tab:anchos_banda_canal} que dependiendo el tipo de modulación MCS a usar, también se tienen diferentes anchos de banda del canal. 
-En el modo HT20 es de 20 MHz, y en el modo HT40 es de 40 MHz. 
-
-\begin{table}[htbp]
-  \centering
-    \begin{tabular}{|c|c|c|}
-    \hline
-    \multicolumn{3}{|c|}{802.11n(2,4 GHz): 6,5 to 300 (MCS0 to MCS15)} \bigstrut\\
-    \hline
-    \multicolumn{3}{|l|}{802.11n HT20 2,4 GHz} \bigstrut\\
-    \hline
-    MCS0/8 & 25   & -93 \bigstrut\\
-    \hline
-    MCS7/15 & 18   & -71 \bigstrut\\
-    \hline
-    \multicolumn{3}{|l|}{802.11n HT40 2,4 GHz} \bigstrut\\
-    \hline
-    MCS0/8 & 22   & -90 \bigstrut\\
-    \hline
-    MCS7/15 & 18   & -68 \bigstrut\\
-    \hline
-    \end{tabular}%
-  \caption{anchos de banda de canal.}
-  \label{tab:anchos_banda_canal}%
-\end{table}%
- 
-
-Como la tasa de transferencia del equipo es de hasta 300 Mbps, se busca este valor en la tabla MCS Index\footnote{\href{https://wlanprofessionals.com/mcs-table-and-how-to-use-it/}{Tabla MCS y como usarla}} y se obtienen los valores mostrados en las Fig. \ref{fig:msc_index_2_4GHz}. 
-Una tabla MCS es una búsqueda que se puede utilizar para encontrar qué velocidad de datos se negociará entre dos estaciones una vez que se conocen todos los parámetros de conexión. 
-Para cada combinación posible de modulación, tasa de codificación, número de flujos espaciales, ancho de canal e intervalo de guarda, existe un índice MCS único.
-
-
-\begin{figure}[htbp]
-  \centering
-  \includegraphics[width=0.5\linewidth]{fotos_ema/msc_index_2_4GHz.jpg}
-  \caption{MSC Index-Análisis para 2,4 GHz.}
-  \label{fig:msc_index_2_4GHz}
-\end{figure}
-
-
-Finalmente, se opta por usar el ancho de banda en el modo HT40 ya que con este se obtiene la tasa de transferencia máxima para una frecuencia de 2,4 GHz.
-
-Para realizar el análisis en la frecuencia de 5 GHz, se deben tener en cuenta el ancho de banda de canal, cantidad de flujos espaciales (SS) y el tipo de modulación. 
-Por medio del datasheet del equipo, se obtiene la Fig. \ref{fig:msc_index_2_4GHz} que indica que para una modulación MCS entre 0 y 9, con un flujo espacial entre 1 y 4 y con un ancho de banda de canal entre 20,40 y 80 MHz, se obtiene una tasa de transferencia de hasta 1733 MBps.
-
-\begin{figure}[htbp]
-  \centering
-  \includegraphics[width=0.5\linewidth]{fotos_ema/carac_ap_1733.jpg}
-  \caption{Características de AP para una tasa de transferencia de 1733 Mbps.}
-  \label{fig:carac_ap_1733}
-\end{figure}
-
-Luego, se recurre al MCS Index para encontrar la modulación requerida. 
-Esto se muestra en la Fig. \ref{fig:msc_index_5_GHz}.
-
-\begin{figure}[htbp]
-  \centering
-  \includegraphics[width=0.5\linewidth]{fotos_ema/msc_index_5_GHz.jpg}
-  \caption{Características de AP para una tasa de transferencia de 1733 Mbps.}
-  \label{fig:msc_index_5_GHz}
-\end{figure}
-
-
-\subsubsection{Características Altai A3-Ei}
-
-De igual manera, se analiza el AP Altai A3-Ei, mostrando los datos de la datasheet\footnote{\href{https://www.altaitechnologies.com/portfolio-item/a3-ei/}{Datasheet Altai A3-Ei}} en la tabla \ref{tab:carac_AP_altai}.
-
-\begin{table}[htbp]
-  \resizebox*{\textwidth}{!}{
-  \centering
-    \begin{tabular}{|c|c|c|p{0.2\textwidth}|p{0.2\textwidth}|c|} 
-    \hline 
-    \textbf{Banda de frecuencia} & \textbf{Tasa de transmisión} & \textbf{Antena} & \textbf{Rango potencia transmisor} & \textbf{Rango sensibilidad receptor} & \textbf{Familia protocolos} \\ 
-    \hline 
-    2,4 GHz & Hasta 450 MBps & 3x3:3 MIMO & Max:30 dBm \newline Min: 25 dBm & HT20: -92dBm \newline HT40: -88dBm & 802.11n \\ 
-    \hline 
-    5 GHz & Hasta 1300 MBps & 3x3:3 MIMO & Max:30 dBm \newline Min: 25 dBm & HT20: -92dBm \newline HT40: -88dBm & 802.11ac \\ 
-    \hline 
-\end{tabular}}
-\caption{características AP Altai A3-Ei.}
-\label{tab:carac_AP_altai}
-\end{table}
-
-
-Mediante la tabla \ref{tab:carac_aruba_AP375}, tabla \ref{tab:carac_AP_altai}  y los datasheet de cada uno de los AP, se puede observar que las especificaciones técnicas de los dos equipos son muy similares pero la ventaja y la razón por la cual se optó por usar el AP Aruba AP-375 es debido a que su antena es omnidireccional, lo cual no ocurre en el AP Altai A3-Ei que posee una antena direccional. 
+Mediante la tabla \ref{tab:carac_ap}  y los datasheet de cada uno de los AP, se puede observar que las especificaciones técnicas de los dos equipos son muy similares pero la ventaja y la razón por la cual se optó por usar el AP Aruba AP-375 es debido a que su antena es omnidireccional, lo cual no ocurre en el AP Altai A3-Ei que posee una antena direccional. 
 Como los AP se colocarán en zonas céntricas de la ciudad, se necesita que posean antenas omnidireccionales para abarcar todos los alrededores. 
 Además, este tipo de AP es el usado por la autopista de la información para ofrecer  Wi-Fi gratuito del gobierno lo que nos asegura su facilidad de adquisición de repuestos. 
 La conexión desde el nodo hasta el POE será realizada por fibra óptica por medio de un transceptor SFP. Para poder acoplarse se necesitará un adaptador fibra-Ethernet.
@@ -1173,8 +1178,9 @@ También se tuvo en consideración que son antenas económicas y muy utilizadas 
 
 
 
-\section{Simulación de la red propuesta}
+\section{Red propuesta}
 
+\subsection{Ubicación de los puntos de acceso}
 Teniendo en cuenta que la localidad de Leandro N. Alem presenta una pequeña cantidad de población distribuida en grandes extensiones de terreno, se plantea utilizar 2 equipos multipunto para poder brindar así una mejor cobertura del servicio. 
 Si bien con un equipo se puede lograr la tasa de transferencia de datos necesaria, el alcance de los mismos no es suficiente para la distribución tan irregular que presenta la localidad. 
 La ubicación de las mismas se planteó teniendo en cuenta las antenas que brindan servicio de internet gratuito por parte del gobierno de la provincia de San Luis y la cantidad de conectados a la misma. 
@@ -1182,9 +1188,9 @@ La ubicación de las mismas se plantea en la Fig. \ref{fig:ubic_ap_alem}.
 
 
 
-\begin{figure}[htbp]
+\begin{figure}[ht!]
   \centering
-  \includegraphics[width=0.8\linewidth]{fotos_ema/ubic_ap_alem.jpg}
+  \includegraphics[width=0.7\linewidth]{fotos_ema/ubic_ap_alem.jpg}
   \caption{ubicación de los APs en la localidad de Leandro N. Alem.}
   \label{fig:ubic_ap_alem}
 \end{figure}
@@ -1195,234 +1201,21 @@ Se decidió la ubicación de la antena 1 debido a la gran cantidad de edificacio
 Por otro lado, se decidió la ubicación de la antena 2, debido a que existe una cantidad importante de edificaciones, pero no se encuentran cubiertas por el rango de ninguna antena de la competencia. 
 Teniendo esto en cuenta, cada equipo deberá lograr una tasa de transferencia bruta de por lo menos 985 Mbps.
 
-\subsection{Armado de las bases de datos}
 
-Para poder realizar la simulación, con la ayuda del programa AutoCAD se procede a realizar un trazado de los edificios y de la vegetación presente en la localidad. 
-Esto se muestra en la Fig. \ref{fig:trazado_edif_autocad}, en donde se marcan detalles tales como casas, árboles, galpones, rutas y caminos, entre otros.
+\subsection{Armado de bases de datos para la simulación}
+Para poder realizar la simulación, con la ayuda del programa AutoCAD se procede a realizar un trazado de los edificios y de la vegetación presente en la localidad. Luego trabajando con PropMan y Wallman se arma una base de datos para alimentar la simulación. Además es necesario realizar un modelado del patrón de radiación de la antena para ambas frecuencias y configurar las frecuencias con las que trabaja la antena, tanto para 2,4 GHz y 5 GHz. Esto es mostrado en mas detalle en el propio desarrollo del trabajo práctico de enlaces inalámbricos punto multi-punto \footnote{\href{https://docs.google.com/document/d/1Yf-dd03_VBnkoWaH1I282qp7TI3WjbeOEgkgxHz9xPk}{TRABAJO PRÁCTICO N$^{o}$ 3 "Enlaces Inalámbricos Punto Multi-Punto"}}.
 
-\begin{figure}[htbp]
-  \centering
-  \includegraphics[width=0.6\linewidth]{fotos_ema/trazado_edif_autocad.jpg}
-  \caption{trazado de edificios en AutoCAD.}
-  \label{fig:trazado_edif_autocad}
-\end{figure}
 
-Utilizando el programa WallMan, se convierte este trazado en una base de datos necesaria para la simulación de propagación con el programa PropMan. 
-La base de datos obtenida se muestra en la Fig. \ref{fig:base_datos_wallman}, en donde se observan los detalles en 3 dimensiones, teniendo cada árbol y edificio su respectiva altura designada al importar el archivo de AutoCAD al programa WallMan.
-
-
-\begin{figure}[htbp]
-  \centering
-  \includegraphics[width=0.5\linewidth]{fotos_ema/base_datos_wallman.jpg}
-  \caption{base de datos en WallMan.}
-  \label{fig:base_datos_wallman}
-\end{figure}
-
-Teniendo la base de datos de los edificios, y la base de datos topográfica, obtenida de internet,\footnote{\href{https://opentopography.org}{OpenTopography}} se procede a comenzar la simulación en PropMan. 
-Para ello es necesario definir la interfaz aérea. 
-Debido a que la antena elegida trabaja con protocolos estandarizados, se utilizan los archivos de configuración de ejemplos otorgados por el programa. Según los requerimientos de velocidad y los protocolos a utilizar previamente expuestos, los archivos a utilizar serán para la frecuencia 2.4 GHz \textit{IEEE 802.11n 40MHz.wst }y para la frecuencia de 5 GHz \textit{IEEE 802.11ac 80MHz.wst}. 
-Posteriormente a la carga de la base de datos topográfica, la base de datos de los edificios y el archivo de interfaz aérea, se obtiene el siguiente espacio de simulación en el programa PropMan, mostrado en la Fig. \ref{fig:sim_ubic_antenas}. 
-Además, en dicha figura se encuentran presentes los sitios donde se emplazarán las antenas. 
-Debido a que la antena elegida trabaja con dos bandas de frecuencia, se procederá a realizar una simulación y un análisis de los resultados obtenidos por separado.
-
-\begin{figure}[htbp]
-  \centering
-  \includegraphics[width=0.75\linewidth]{fotos_ema/sim_ubic_antenas.jpg}
-  \caption{espacio de simulación con la  ubicación de las antenas.}
-  \label{fig:sim_ubic_antenas}
-\end{figure}
-
-
-\subsection{Frecuencia 2.4 GHz}
-
-Si bien el datasheet del fabricante no brinda información sobre el patrón de radiación de la antena, diciendo solamente que es omnidireccional y presenta una ganancia de 4 dBi, se encontró en un foro administrado por la empresa fabricante\footnote{\href{https://community.arubanetworks.com/community-home/digestviewer/viewthread?MID=25688}{Patrón de radiación de la antena}}, que la antena presenta un patrón similar al patrón de su modelo predecesor, Aruba AP-275. 
-El mismo es mostrado en la Fig. \ref{fig:patron_2_4_GHz}, y se utilizó para moldear con el programa AMan un modelo en 3D, necesario para la simulación. 
-
-\begin{figure}[htbp]
-  \centering
-  \includegraphics[width=\linewidth]{fotos_ema/patron_2_4_GHz.jpg}
-  \caption{patrón de radiación de la antena.}
-  \label{fig:patron_2_4_GHz}
-\end{figure}
-
-Se obtiene la siguiente configuración de red, presente en la Fig. \ref{fig:conf_red_2_4}, en donde considerando que la antena soporta tecnología 2x2 MIMO, se selecciona esta opción. 
-Además, se desactivan los modos de transmisión que ofrecen data rates menores a 70 Mbps, ya que presentan niveles muy bajos de transferencia de datos.
-
-
-\begin{figure}[htbp]
-  \centering
-  \includegraphics[width=0.5\linewidth]{fotos_ema/conf_red_2_4.jpg}
-  \caption{configuración de red para la frecuencia de 2,4 GHz.}
-  \label{fig:conf_red_2_4}
-\end{figure}
-
-Por otro lado, se considera una altura de 4 metros para el CPE. 
-Esto se decidió de manera empírica, al observar que la mayoría de las antenas se encuentran a esa altura, y suponiendo además casas con alturas máximas de 3 metros, es posible colocar las antenas receptoras a esta altura. 
-La antena emisora, se coloca a 5 metros para tratar de evitar la mayor cantidad de obstáculos. 
-Esta decisión es reforzada por el relevamiento realizado en algunos puntos de San Luis, en donde la mayoría de las antenas se encuentran a una altura promedio de 5 metros.
-
-El método de computación a utilizar es el D.P.M. debido a su rapidez y fiabilidad. 
-Con dicho método se obtiene la potencia entregada por cada antena, las respectivas áreas que poseen la misma velocidad de transmisión de datos, la relación señal ruido y la probabilidad de recepción. 
-
-\subsubsection{Potencia}
-
-En la Fig. \ref{fig:pot_trans_eq_1} se presenta la potencia transmitida por el equipo colocado en el lugar marcado como \textbf{Antena 1}, mientras que la Fig. \ref{fig:pot_trans_eq_2} muestra la potencia entregada por el equipo colocado en el lugar marcado como \textbf{Antena 2}.
-
-\begin{figure}[ht!]
-  \centering
-  \subcaptionbox{potencia transmitida por el equipo 1.\label{fig:pot_trans_eq_1}}[.9\linewidth]{\includegraphics[height=14\baselineskip]{fotos_ema/pot_trans_eq_1.jpg}}
-
-  \subcaptionbox{potencia transmitida por el equipo 2.\label{fig:pot_trans_eq_2}}[.9\linewidth]{\includegraphics[height=14\baselineskip]{fotos_ema/pot_trans_eq_2.jpg}}
-  \caption{potencia entregada por los equipos.}
-  \label{fig:pot_eq_24_GHz}
-\end{figure}
-
-
-\subsubsection{Velocidad de transmisión de datos}
-
-En la Fig. \ref{fig:vel_trans_datos_1} se muestra el máximo data rate de ambas antenas para el uplink. En la Fig. \ref{fig:vel_trans_datos_2} se lo muestra para el downlink.
-
-\begin{figure}[ht!]
-  \centering
-  \subcaptionbox{máximo data rate para el enlace uplink.\label{fig:vel_trans_datos_1}}[.9\linewidth]{\includegraphics[height=14\baselineskip]{fotos_ema/vel_trans_datos_1.jpg}}
-
-  \subcaptionbox{máximo data rate para el enlace downlink.\label{fig:vel_trans_datos_2}}[.9\linewidth]{\includegraphics[height=14\baselineskip]{fotos_ema/vel_trans_datos_2.jpg}}
-  \caption{simulación de la máxima tasa de transferencia.}
-  \label{fig:vel_trans_datos_24}
-\end{figure}
-
-
-\subsubsection{Relación señal ruido más interferencia}
-
-A continuación, se muestra la relación señal ruido más interferencia para ambas antenas. 
-Eligiendo una modulación 16 QAM se obtiene un mayor alcance al mismo tiempo que se  compromete el data rate. 
-Debido a la distribución poblacional presente, es que se opta por realizar este compromiso. 
-Sin embargo, esto no presenta un problema ya que el data rate es suficiente. 
-En la Fig. \ref{fig:ul_snr_2_4} se muestra dicha relación para el uplink, mientras que en la Fig. \ref{fig:dl_snr_2_4} se muestra la relación para el downlink.
-
-\begin{figure}[ht!]
-  \centering
-  \subcaptionbox{relación señal-ruido más interferencia para el uplink.\label{fig:ul_snr_2_4}}[.9\linewidth]{\includegraphics[height=14\baselineskip]{fotos_ema/ul_snr_2_4.jpg}}
-
-  \subcaptionbox{relación señal-ruido más interferencia para el downlink\label{fig:dl_snr_2_4}}[.9\linewidth]{\includegraphics[height=14\baselineskip]{fotos_ema/dl_snr_2_4.jpg}}
-  \caption{relación señal-ruido más interferencia.}
-  \label{fig:snr_2_4}
-\end{figure}
-
-
-
-\subsubsection{Probabilidad de recepción}
-
-Para poder realizar una mejor estimación de la recepción, el programa brinda la posibilidad de obtener la probabilidad de recepción de la señal teniendo en cuenta el umbral de recepción, la potencia de transmisión y la ganancia de la antena del equipo CPE. 
-Con esto, se obtiene la Fig. \ref{fig:dl_prob_rec_2_4} para el downlink y la Fig. \ref{fig:ul_prob_rec_2_4} para el uplink.
-
-
-\begin{figure}[ht!]
-  \centering
-  \subcaptionbox{probabilidad de recepción para el downlink.\label{fig:dl_prob_rec_2_4}}[.9\linewidth]{\includegraphics[height=14\baselineskip]{fotos_ema/dl_prob_rec_2_4.jpg}}
-
-  \subcaptionbox{probabilidad de recepción para el uplink.\label{fig:ul_prob_rec_2_4}}[.9\linewidth]{\includegraphics[height=14\baselineskip]{fotos_ema/ul_prob_rec_2_4.jpg}}
-  \caption{simulación de la probabilidad de recepción.}
-  \label{fig:prob_rec_2_4}
-\end{figure}
-
-\clearpage
-\subsection{Frecuencia de 5 GHz}
-
-Para una frecuencia de 5 GHz, se tiene una antena con un patrón de radiación como el mostrado en la Figura \ref{fig:patron_2_4_GHz}, pero con una ganancia de 4,6 dBi. 
-Una vez modificados los parámetros y cargado el archivo de interfaz aérea, se tiene la siguiente configuración mostrada en la Fig. \ref{fig:conf_red_5}, en donde debido a las características de la antena se selecciona la tecnología MIMO 4x4. 
-Además se desactivan los modelos de transmisión que brindan velocidades de transmisión menores a 200 Mbps, ya que con las mismas no se logra cumplir con los requisitos previamente mencionados.
-
-
-\begin{figure}[htbp]
-  \centering
-  \includegraphics[width=0.5\linewidth]{fotos_ema/conf_red_5.jpg}
-  \caption{configuración de red para la frecuencia de 5 GHz.}
-  \label{fig:conf_red_5}
-\end{figure}
-
-
-Se respeta la configuración de las alturas de las antenas, la posición de las mismas y del modo de computación utilizado en la simulación de la frecuencia de 2.4 GHz. 
-Con dicha configuración, se procederá a analizar la potencia entregada por cada equipo, el máximo data rate obtenible, la relación señal-ruido y la probabilidad de recepción del servicio. 
-
-%===================================================================
-
-\subsubsection{Potencia}
-
-En la Fig. \ref{fig:pot_trans_eq_1_5GHz} se presenta la potencia transmitida por el equipo colocado en el lugar marcado como \textbf{Antena 1}, mientras que la Fig. \ref{fig:pot_trans_eq_2_5GHz} muestra la potencia entregada por el equipo colocado en el lugar marcado como \textbf{Antena 2}.
-
-\begin{figure}[ht!]
-  \centering
-  \subcaptionbox{potencia transmitida por el equipo 1.\label{fig:pot_trans_eq_1_5GHz}}[.9\linewidth]{\includegraphics[height=14\baselineskip]{fotos_ema/pot_trans_eq_1_5GHz.jpg}}
-
-  \subcaptionbox{potencia transmitida por el equipo 2.\label{fig:pot_trans_eq_2_5GHz}}[.9\linewidth]{\includegraphics[height=14\baselineskip]{fotos_ema/pot_trans_eq_2_5GHz.jpg}}
-  \caption{potencia entregada por los equipos.}
-  \label{fig:pot_trans_5GHz}
-\end{figure}
-
-
-\subsubsection{Velocidad de transmisión de datos}
-
-En la Fig. \ref{fig:ul_drate_5GHz} se muestra el máximo data rate de ambas antenas para el uplink. En la Fig. \ref{fig:dl_drate_5GHz} se lo muestra para el downlink.
-
-\begin{figure}[ht!]
-  \centering
-  \subcaptionbox{máximo data rate para el enlace uplink.\label{fig:ul_drate_5GHz}}[.9\linewidth]{\includegraphics[height=14\baselineskip]{fotos_ema/ul_drate_5GHz.jpg}}
-
-  \subcaptionbox{máximo data rate para el enlace downlink.\label{fig:dl_drate_5GHz}}[.9\linewidth]{\includegraphics[height=14\baselineskip]{fotos_ema/dl_drate_5GHz.jpg}}
-  \caption{simulación de la máxima tasa de transferencia.}
-  \label{fig:vel_trans_datos_5}
-\end{figure}
-
-
-\subsubsection{Relación señal ruido más interferencia}
-
-A continuación, se muestra la relación señal ruido más interferencia para ambas antenas. 
-Eligiendo una modulación 16 QAM se obtiene un mayor alcance al mismo tiempo que se  compromete el data rate. 
-Debido a la distribución poblacional presente, es que se opta por realizar este compromiso. 
-Sin embargo, esto no presenta un problema ya que el data rate es suficiente. 
-En la Fig. \ref{fig:ul_snr_5} se muestra dicha relación para el uplink, mientras que en la Fig. \ref{fig:dl_snr_5} se muestra la relación para el downlink.
-
-\begin{figure}[ht!]
-  \centering
-  \subcaptionbox{relación señal-ruido más interferencia para el uplink.\label{fig:ul_snr_5}}[.9\linewidth]{\includegraphics[height=14\baselineskip]{fotos_ema/ul_snr_5.jpg}}
-
-  \subcaptionbox{relación señal-ruido más interferencia para el downlink\label{fig:dl_snr_5}}[.9\linewidth]{\includegraphics[height=14\baselineskip]{fotos_ema/dl_snr_5.jpg}}
-  \caption{relación señal-ruido más interferencia.}
-  \label{fig:snr_5}
-\end{figure}
-
-
-
-\subsubsection{Probabilidad de recepción}
-
-Para poder realizar una mejor estimación de la recepción, el programa brinda la posibilidad de obtener la probabilidad de recepción de la señal teniendo en cuenta el umbral de recepción, la potencia de transmisión y la ganancia de la antena del equipo CPE. 
-Con esto, se obtiene la Fig. \ref{fig:dl_prob_rec_5} para el downlink y la Fig. \ref{fig:ul_prob_rec_5} para el uplink.
-
-
-\begin{figure}[ht!]
-  \centering
-  \subcaptionbox{probabilidad de recepción para el downlink.\label{fig:dl_prob_rec_5}}[.9\linewidth]{\includegraphics[height=14\baselineskip]{fotos_ema/dl_prob_rec_5.jpg}}
-
-  \subcaptionbox{probabilidad de recepción para el uplink.\label{fig:ul_prob_rec_5}}[.9\linewidth]{\includegraphics[height=14\baselineskip]{fotos_ema/ul_prob_rec_5.jpg}}
-  \caption{simulación de la probabilidad de recepción.}
-  \label{fig:prob_rec_5}
-\end{figure}
-
-\clearpage
-
-\subsection{Análisis de los resultados obtenidos}
-
-Con los datos obtenidos en la simulación se procede a realizar un análisis de los mismos con el fin de obtener un radio aproximado de cobertura del servicio. 
-En la Tabla 7 se muestra una recopilación de los distintos radios mínimos medidos en el programa PropMan para los distintos datos simulados. 
+Con los datos obtenidos en la simulación presente en el práctico, se realizó un análisis con el fin de obtener un radio aproximado de cobertura del servicio. 
+Presentando nuevamente la tabla \ref{tab:area_24GHz} , se muestra una recopilación de los distintos radios mínimos medidos en el programa \textit{PropMan} para los distintos datos simulados. 
 Teniendo en cuenta el datasheet del equipo elegido para la frecuencia de 2,4 GHz así como la modulación utilizada, se tiene una sensibilidad del receptor de -84 dBm. 
 Con esto se procede a obtener un radio donde la potencia alrededor del equipo AP sea mayor que dicha sensibilidad. 
 Por otro lado, se obtiene que según la modulación se necesita una SNR mínima de 18 dB. 
 Sin embargo, por precaución, se toma un área circular donde la SNIR sea al menos mayor a 25 dB. 
 Además, se obtiene el radio del área donde existe una probabilidad de conexión mayor al 80\%. 
-Con estos datos se procede a armar la Tabla 7 con el fin de determinar un radio de cobertura del servicio. 
+Con estos datos se obtiene una posible área de cobertura del servicio. 
 La posible área de cobertura se obtiene calculando un promedio de todos los valores, exceptuando la potencia mayor al umbral del receptor, al ser un valor muy alejado de la media. 
-Con esto se obtiene una posible área de cobertura que abarca un radio de 487 metros para la primera antena, y de 483 metros para la segunda antena.
+Con esto se obtiene un área de cobertura que abarca un radio de 487 metros para la primera antena, y de 483 metros para la segunda antena.
 
 \begin{table}[htbp]
   \resizebox*{\textwidth}{!}{
@@ -1435,11 +1228,14 @@ Con esto se obtiene una posible área de cobertura que abarca un radio de 487 me
  \hline 
 \end{tabular}}
 \caption{posible área de cobertura del servicio para 2.4 GHz.}
-\label{}
+\label{tab:area_24GHz}
 \end{table}
 
 
-En el caso de la frecuencia de 5 GHz, se tiene un equipo con un umbral de recepción de -75 dBm para la modulación utilizada. Se procede a realizar lo mismo que se midió para la frecuencia de 2.4 GHz, sólo que en este caso se necesita un SNIR mayor a 24 dB. Para mayor seguridad se toma como mínimo un SNIR de 41 dB.  Con esto se obtiene la Tabla 8.
+En el caso de la frecuencia de 5 GHz, se tiene un equipo con un umbral de recepción de -75 dBm para la modulación utilizada. 
+Se procede a realizar lo mismo que se midió para la frecuencia de 2.4 GHz, sólo que en este caso se necesita un SNIR mayor a 24 dB. 
+Para mayor seguridad se toma como mínimo un SNIR de 41 dB.  
+Esto se muestra en la tabla \ref{tab:area_5GHz}.
 
 \begin{table}[htbp]
   \resizebox*{\textwidth}{!}{
@@ -1450,212 +1246,313 @@ En el caso de la frecuencia de 5 GHz, se tiene un equipo con un umbral de recepc
  & Antena 2 & 280 & 350 & 445 & 238 & 344 \\ \hline 
 \end{tabular}}
 \caption{Posible área de cobertura del servicio para 5 GHz.}
-\label{}
+\label{tab:area_5GHz}
 \end{table}
 
 Finalmente, se esboza en AutoCAD la posible área de cobertura en donde se podría brindar el servicio. 
 Esto se muestra en la Fig. \ref{fig:grafico_cobertura}, en donde con color rojo se marca el área cubierta por la antena 1, mientras que en azul el área cubierta por la antena 2.
 
-\begin{figure}[htbp]
+\begin{figure}[ht!]
   \centering
   \includegraphics[width=0.8\linewidth]{fotos_ema/grafico_cobertura.jpg}
   \caption{Gráfico de la cobertura de ambas antenas.}
   \label{fig:grafico_cobertura}
 \end{figure}
 
-\clearpage
 \subsection{Conslusión}
 
-Con el análisis realizado en este trabajo, se puede concluir que el uso de 2 AP es suficiente para lograr la red propuesta y abarcar un total de 99 hogares, presentando así la cobertura suficiente para lograr los 83 clientes propuestos al inicio de este trabajo, ya que estos representan el 84\% del total abarcado. 
+Con el análisis realizado, se puede concluir que el uso de 2 AP es suficiente para lograr la red propuesta y abarcar un total de 99 hogares, presentando así la cobertura suficiente para lograr los 83 clientes propuestos al inicio de este trabajo, ya que estos representan el 84\% del total abarcado. 
 
 Por otro lado, con la configuración elegida no se logró la tasa de transferencia bruta propuesta al inicio de este trabajo de 985 Mbps para cada AP. No obstante, esto no supondrá un problema ya que debido al sobredimensionamiento que se utilizó para el cálculo, se optó por una configuración que brinde una tasa de transferencia bruta de 967 Mbps, pero que abarque la mayor área posible.
-
-
-\clearpage
-\part{Red de fibra óptica}
-
-\section{Red troncal con fibra óptica}
-
-
-
-
 
 
 
 \section{Red de acceso con fibra óptica}
 
+\subsection{Determinación de la cantidad de ONTs que soporta cada OLT}
+
+Del estudio socioeconómico realizado sobre la localidad de Leandro N. Alem se obtuvo que 83 hogares del total de la población serán potenciales clientes del servicio brindado. 
+Además, se obtuvo que la tasa de transferencia requerida por cliente teniendo en cuenta el peor de los casos es de 11,86 Mbps.
+
+Para calcular el número máximo de ONTs que soporta una OLT por puerto se utiliza la ecuación \ref{eq:max_ont}.
+
+\begin{equation}
+ C*B*TCP=CRG
+ \label{eq:max_ont}
+\end{equation}
+
+
+Donde:
+
+\begin{itemize}
+\item  $C$ = Tasa de concurrencia
+\item  $N$ = Número de ONT
+\item  $TCP$ = Tráfico por cliente
+\item  $CRG$ = Capacidad de la red GPON
+\end{itemize}
+
+Sabiendo que la capacidad de la red GPON es de 1,25 Gbps, el número y el tráfico por clientes es el mencionado anteriormente y considerando una tasa de concurrencia del 100\%, reemplazando en la ecuación \ref{eq:max_ont} se obtiene que cada puerto de la OLT puede manejar un máximo de 101 ONTs como muestra la ecuación \ref{eq:res_ont_max}.
+
+\begin{equation}
+  N=\frac{CRG}{C*TCP}=\frac{1200*10^6}{1*11,86*10^6}\approx 101  
+  \label{eq:res_ont_max}
+\end{equation}
+
+Como conclusión se obtiene que al tener una tasa de concurrencia del 100\%, con un puerto GPON de la OLT es suficiente para manejar los 83 clientes de la localidad de Leandro N. Alem.
+
+
+%================================================================
+
+\subsection{Determinación del alcance de la red óptica}
+
+\subsubsection{OLT}
+
+Para determinar el alcance de la red óptica es menester elegir los distintos equipos que la conforman. 
+Primeramente, se preseleccionaron los siguientes OLTs de las marcas Ubiquiti y TP-Link, debido a que son marcas comercializadas ampliamente en Argentina y disponen de revendedores en el país. 
+Las características de los mismos son mostradas en la tabla \ref{tab:olts_presel}.
+
+\begin{table}[htbp]
+  \centering
+  \begin{tabular}{|c|c|c|c|} \hline 
+    \textbf{Opciones} & \textbf{Opción 1} & \textbf{Opción 2} & \textbf{Opción 3} \\ \hline 
+    \textbf{Marca} & Ubiquiti & Ubiquiti & TP-Link \\ \hline 
+    \textbf{Modelo} & UF-OLT\tablefootnote{\href{https://dl.ubnt.com/ds/uf_gpon}{UFiber GPON Datasheet, página 9}} & UF-OLT-4\tablefootnote{\href{https://dl.ubnt.com/ds/uf_gpon}{UFiber GPON Datasheet, página 10}} & OLT P1201-08\tablefootnote{\href{https://www.tp-link.com/ar/service-provider/gpon/p1201-08/}{P1201-08|GPON OLT de 8 puertos}} \\ \hline 
+    \textbf{Puertos GPON SFP} & 8 & 4 & 8 \\ \hline 
+    \textbf{Puertos SFP+} & 2 & 1 & 2 \\ \hline 
+    \textbf{Cantidad de ONUs máxima} & 1024 & 512 & 1024 \\ \hline 
+    \textbf{Precio con un dólar a \$ 165} & \$ 1.385,27 & \$ 890,53 & \$ 1.447,85 \\ \hline 
+    \textbf{Precio en pesos} &  \$ 228.569,00\tablefootnote{\href{https://articulo.mercadolibre.com.ar/MLA-730499098-ufiber-ubiquiti-uf-olt-8-puertos-gpon-sfp-linea-optica-_JM}{Precio opción 1}} &  \$ 146.937,00\tablefootnote{\href{https://www.mercadolibre.com.ar/switch-ubiquiti-networks-uf-olt-4/p/MLA14615949}{Precio opción 2}} &  \$ 238.896,00\tablefootnote{\href{https://articulo.mercadolibre.com.ar/MLA-926970453-switch-router-tp-link-p1201-08-8-puertos-gpon-olt-4-giga-sfp-_JM}{Precio opción 3}} \\ \hline 
+    \end{tabular}
+    \caption{opciones de OLTs preseleccionados.}
+    \label{tab:olts_presel}  
+\end{table}
+
+Analizando las opciones encontradas, se tiene que la opción 2 posee la menor cantidad de puertos SFP y SFP+ de todos los equipos. 
+No obstante, considerando que la cantidad de clientes máximos soportada por cada equipo excede en gran manera a la cantidad de clientes previstos, la cantidad de puertos no es un elemento decisivo. 
+
+Por otro lado, las opciones 1 y 2 incluyen un módulo SFP clase B+\footnote{\href{https://docs.google.com/spreadsheets/d/1rmlMl8y5O11057Wbb303iKk9dc6XedijkpFMKAgwH_U/edit\#gid=2076166277}{Lista de Precios - LQ.xlsx, Libro: Ubiquiti, Celda: B157}}, modelo UF-GP-B+\footnote{\href{https://www.ui.com/accessories/gpon-network-accessories/}{GPON Network Accessories}}.
+Según lo calculado en el apartado anterior, con un solo puerto GPON se puede cubrir los requerimientos de la red deseada. 
+Es por ello, que el hecho de contar con un módulo SFP GPON incluido presenta una gran ventaja, ya que se evita la necesidad de buscar un dispositivo y se obtiene un equipo listo para ser instalado, con una compatibilidad asegurada por el fabricante. 
+Este ahorro de dinero en la inversión inicial es fundamental para poder asegurar un servicio lo más económico posible. 
+Es por ello, que se descarta la opción 3. 
+
+Finalmente se elige la opción 2, ya que es la más económica, presenta la cantidad de puertos suficiente para la implementación de la red y además se comercializa con un módulo SFP incluido en el costo. 
+Si al realizar el cálculo de enlace no se cumple con el presupuesto de potencia, se comercializan también módulos SFP clase C+ de la misma marca. 
+
+\subsubsection{Módulos SFP}
+Se presenta en la tabla \ref{tab:comp_sfp} una comparativa entre el módulo SFP clase B+ y clase C+.
+\begin{table}[htbp]
+  \centering
+\begin{tabular}{|c|c|c|} \hline 
+\textbf{Opciones} & \textbf{Opción 1} & \textbf{Opción 2} \\ \hline 
+\textbf{Marca} & Ubiquiti & Ubiquiti \\ \hline 
+\textbf{Modelo} & UF‑GP‑B+\footnote{\href{}{UFiber GPON Datasheet, página 5}} & UF‑GP‑C+ \\ \hline 
+\textbf{Precio en dólares} & \$ 166,36 & \$117\footnote{\href{}{Lista de Precios - LQ.xlsx, celda A159}} \\ \hline 
+\textbf{Precio en pesos} & \$ 27.450,00\footnote{\href{}{Precio opción 1}} & \$ 14.263,00 \\ \hline 
+\textbf{Módulo Óptico} & Clase B+ & Clase C+ \\ \hline 
+\textbf{Rango de potencia TX} & 1,5 a 5 dBm & 3 a 7 dBm \\ \hline 
+\textbf{Rango de potencia RX} & -28 a -8 dBm & -32 a -12 dBm \\ \hline 
+\textbf{Longitud de onda TX} & 1490 nm & 1490 nm \\ \hline 
+\textbf{Longitud de onda RX} & 1310 nm & 1310 nm \\ \hline 
+\end{tabular}
+\caption{Comparativa entre los 2 modulos SFP.}
+\label{tab:comp_sfp}
+\end{table}
+
+
+\subsubsection{ONT/ONU}
+
+En el caso de las ONUs, se presentan en la tabla \ref{tab:comp_onus} tres opciones con sus respectivas características. Debido a que el módulo SFP que incluye el equipo previamente elegido es de clase B+, se descarta la opción 3, ya que es de clase C+. Se opta por elegir la opción 2, debido a que es la más económica y presenta las mismas características que la opción 1.
+\begin{table}[htbp]
+  \centering
+\begin{tabular}{|c|c|c|c|} \hline 
+\textbf{Opciones} & \textbf{Opción 1} & \textbf{Opción 2} & \textbf{Opción 3} \\ \hline 
+\textbf{Marca} & Ubiquiti & TP-Link & TP-Link \\ \hline 
+\textbf{Modelo} & UF-Loco\tablefootnote{\href{https://dl.ubnt.com/ds/uf_gpon}{UFiber GPON Datasheet, página 12}} & XZ000-G3\tablefootnote{\href{https://www.tp-link.com/ar/service-provider/gpon/xz000-g3/\#specifications}{XZ000-G3 | Terminal GPON Gigabit de 1 puerto}} & TX-6610\tablefootnote{\href{https://www.tp-link.com/ae/service-provider/gpon/tx-6610/\#specifications}{TX-6610 |1-Port Gigabit GPON Terminal}} \\ \hline 
+\textbf{Precio en dólares} &  \$ 54,0 &  \$ 14,8 &  \$ 20 \\ \hline 
+\textbf{Precio en pesos} &  \$ 5.997,0\tablefootnote{\href{https://docs.google.com/spreadsheets/d/1rmlMl8y5O11057Wbb303iKk9dc6XedijkpFMKAgwH_U/edit\#gid=2076166277}{Precio opción 1}} &  \$ 2.450,0\tablefootnote{\href{https://articulo.mercadolibre.com.ar/MLA-926563889-terminal-gpon-gigabit-de-1-puerto-tp-link-xz000-g3-_JM}{Precio opción 2}} &  \$ 3.300,0\tablefootnote{\href{https://articulo.mercadolibre.com.ar/MLA-856287978-modem-terminal-gpon-tp-link-fibra-optica-giga-voip-ftth-_JM}{Precio opción 3}} \\ \hline 
+\textbf{Módulo Óptico} & Clase B+ & Clase B+ & Clase C+ \\ \hline 
+\textbf{Rango de potencia TX} & 1,5 a 5 dBm & 1,5 a 5 dBm & 3 a 7 dBm \\ \hline 
+\textbf{Rango de potencia RX} & -28 a -8 dBm & -28 a -8 dBm & -32 a -12 dBm \\ \hline 
+\end{tabular}
+\caption{ONUs preseleccionadas.}
+\label{tab:comp_onus}
+\end{table}
+
+\subsubsection{Fibra óptica:}
+
+Para la distribución de la fibra óptica se deciden utilizar 2 tipos teniendo en cuenta cuál se adapta mejor a cada escenario. 
+Desde el OLT hasta el splitter se utilizará el tipo de fibra óptica G.652.D. 
+Esto se debe a que se comercializa en bobinas de 4 km, lo cual permitiría reducir los empalmes necesarios para llegar al splitter. 
+Por otro lado, del splitter hasta el equipo ONT/ONU se decide utilizar la fibra óptica G.657.A porque tiene menores pérdidas ante los dobleces, permitiendo resistir mejor una instalación domiciliaria. 
+Para ello se consideran las siguientes opciones de cables:
+
+\begin{itemize}
+\item  Cable ADSS, de la marca GLC, modelo GLC-ADSS80-4/6 y se comercializa en bobinas de 4 km\footnote{\href{https://docs.google.com/spreadsheets/d/1rmlMl8y5O11057Wbb303iKk9dc6XedijkpFMKAgwH_U/edit\#gid=400833791}{Lista de Precios - LQ.xlsx, Libro: Fibra-GLC, Celda A14, CATÁLOGO, página 27}}. La fibra corresponde a la norma G.652.D.
+\item  Cable Drop FTTH FLAT con portante de dieléctrico, modelo GLC-DROP-FLAT-DIE, se comercializa en bobinas de 2 km y la fibra óptica se corresponde con G.657.A1\footnote{\href{https://docs.google.com/spreadsheets/d/1rmlMl8y5O11057Wbb303iKk9dc6XedijkpFMKAgwH_U/edit\#gid=400833791}{Lista de Precios - LQ.xlsx, Libro: Fibra-GLC, Celda A38, CATÁLOGO, página 30}}. Además presenta la opción de 1, 2 o 4 pelos de fibra óptica.
+\item  Cable Drop Profiber de 1 pelo de fibra óptica, es del tipo G.657.A2 LSZH (SM) ANTI FLAMA con mensajero de ACERO y se comercializa en bobinas de 1 km\footnote{\href{https://docs.google.com/spreadsheets/d/1rmlMl8y5O11057Wbb303iKk9dc6XedijkpFMKAgwH_U/edit\#gid=400833791}{Lista de Precios - LQ.xlsx, Libro: Fibra Profiber, Celda A27,FIBRA OPTICA DROP}}. 
+\end{itemize}
+
+Teniendo en cuenta que las fibras ópticas del tipo G.657 de la categoría A son totalmente compatibles con las fibras monomodo UIT-T G.652, se decide utilizar la fibra óptica tipo G.657.A2 ya que esta posee mayor resistencia a los dobleces que la fibra del tipo G.657.A1. 
+Para la transmisión, los equipos utilizan las longitudes de onda 1490 nm y 1310 nm. 
+Esto deviene en que para el cálculo de enlace, las atenuaciones de las fibras según las hojas de datos son: 
+
+\begin{itemize}
+\item  Para 1310: 0,35 dB/km
+\item  Para 1490: 0,25 dB/km 
+\end{itemize}
+
+En la sección \ref{section:calculo_alc_max_fo} del anexo, se obtuvo que las distancias máximas para el upstream es de 85,67 kilómetros y de 116,8 kilómetros para el downstream.
+Es menester recalcar que si bien la distancia máxima que se puede lograr en teoría es mayor a los 20 kilómetros que el equipo marca como máximo, al utilizar un splitter, las pérdidas que este presenta pueden variar desde los 5 hasta los 25 decibelios, disminuyendo la distancia efectiva del enlace. 
+Esto será abordado con más detalle en el siguiente apartado.
+  
+%=================================================================
+\subsection{Splitters}
+  
+En la sección \ref{section:calc_rel_div_spl} del anexo se presentan las características de las distintas opciones de splitters considerados para el proyecto.    
+Si bien los splitters de la marca MACH tienen menor atenuación, se elige trabajar con los productos de la marca KOC debido a que se obtuvo información de los precios por parte del fabricante a través de un presupuesto enviado por e-mail. 
+
+\subsection{Representación esquemática de la solución de OLTs, splitters y ONTs}
+    
+Del estudio realizado en la sección  sobre la distribución de los potenciales clientes se obtuvo que el 80 \% (66 clientes) de la población vive en los cuadrantes del 1 al 9 y el 20\% restante (17 clientes) se encuentra distribuido entre los cuadrantes 10 al 15.
+En la Fig. \ref{fig:cuadrantes_alem_fo} se observa en rojo los cuadrantes en los cuales se concentra la mayor cantidad de gente y con un icono verde la ubicación de las antenas de la Autopista de la Información. 
+Con las imágenes aéreas provistas por el software Google Earth y con la imposibilidad de realizar un sondeo económico de la zona, se estimó que los clientes con mayor poder adquisitivo se encuentran entre los cuadrantes que van del 1 al 6, dado el mayor tamaño de la vivienda respecto a las demás. 
+Sin embargo se decidió dar prioridad a los cuadrantes 3, 4, 5 y 6 dada la ubicación de una antena de internet de la competencia. 
+Por otra parte, los cuadrantes del 11 al 14 no se ven alcanzados por ninguna antena del gobierno, por lo que se estima que brindando un servicio que antes no disponían se encontrarán potenciales clientes en esta zona. 
+Por último, en los cuadrantes 9 y 10 está la zona céntrica, en la cual se ubica la plaza donde se encuentra una antena de internet de la competencia que está saturada. 
+
+
+\begin{figure}[htbp]
+  \centering
+  \includegraphics[width=0.8\linewidth]{fotos_ema/cuadrantes_alem.jpg}
+  \caption{a la izquierda la zona norte y a la derecha la zona sur de la localidad de leandro N. Alem.}
+  \label{fig:cuadrantes_alem_fo}
+\end{figure}
+
+
 
 \part{Comparación de ambas soluciones}
 
 
-
-\begin{table}[htbp]
-  \resizebox{\textwidth}{!}{
-  \centering
-    \begin{tabular}{|c|C{0.25\textwidth}|C{0.25\textwidth}|C{0.25\textwidth}|C{0.25\textwidth}|}
-\cline{2-5}    \multicolumn{1}{r|}{} & \multicolumn{2}{c|}{Radio Enlace} & \multicolumn{2}{c|}{Fibra óptica} \bigstrut\\
-\cline{2-5}    \multicolumn{1}{r|}{} & Ventajas & Desventajas & Ventajas & Desventajas \bigstrut\\
-\hline
-    \multirow{6}[12]{*}{Troncal} & Equipamiento e instalaciones económicas & La torre resulta intrusiva al paisaje natural & No se necesita infraestructura nueva para el tendido. & Altos costos \bigstrut\\
-\cline{2-5}         & Fácil adquisición de materiales y equipos & Permisos  de construcción y edificación & Facilidad para extender el servicio a otras localidades & Gran cantidad de equipos necesarios para el tendido \bigstrut\\
-\cline{2-5}         & Existe posibilidad de proveer una mayor tasa de transferencia sin necesidad de cambiar el equipo & Si se desea ampliar el servicio a otras zonas, se debe comprar nuevos equipos y colocar nuevas torres & Baja latencia & Se requieren cuidados especiales en el despliegue \bigstrut\\
-\cline{2-5}         & No necesita de un mantenimiento regular & El servicio es afectado por las inclemencias del tiempo & Alta fidelidad, independiente de las inclemencias del tiempo & Alto mantenimiento, debido a posibles cortes en la fibra \bigstrut\\
-\cline{2-5}         & Instalación y puesta en marcha & Necesita de técnicos capacitados en trabajo en altura para su mantenimiento & Posibilidad de partnership con el gobierno de San Luis & Instalación y puesta en marcha \bigstrut\\
-\cline{2-5}         & Debido a la frecuencia utilizada, no es necesario licencias ni pago de comisiones &  &      & Lenta amortización \bigstrut\\
-\hline
-    \multirow{6}[12]{*}{Distribución} & Facilidad de conexión para nuevos usuarios & El servicio es afectado por las inclemencias del tiempo & Robustez ante ataques informáticos & Altos costos de mantenimiento y despliegue \bigstrut\\
-\cline{2-5}         & Baja cantidad de equipos necesarios para brindar el servicio & Posibilidad de phishing & Brindar un servicio no existente, alternativo al competidor principal & Baja flexibilidad a la hora de incorporar nuevos clientes \bigstrut\\
-\cline{2-5}         & Bajo requerimiento de fibra óptica & Complicaciones a la hora de aumentar la cobertura & Altas tasas de transferencia &  \bigstrut\\
-\cline{2-5}         & Bajo mantenimiento & Reducción del ancho de banda en horas pico & Baja latencia &  \bigstrut\\
-\cline{2-5}         &      & Posibilidad de hurto de los equipos & Baja probabilidad de hurto de los equipos &  \bigstrut\\
-\cline{2-5}         &      & Problemas a la hora de establecer el enlace  con las obstrucciones  &      &  \bigstrut\\
-    \hline
-    \end{tabular}}%
-    \caption{Comparación de ambas tecnologías tanto para red de acceso como red de distribución.}
-  \label{tab:comp_tec}%
-\end{table}%
-
-
-
-\part{Análisis económico}
-
-La realización de un análisis económico y financiero es fundamental para poder evaluar distintos aspectos vinculados con el proyecto y su evolución. 
-
-El análisis económico y financiero del proyecto apunta a:
-
-\begin{itemize}
-    \item Conocer en detalle los costos individuales y totales involucrados, tanto en el proceso de desarrollo como en la implementación y gestión del proyecto a lo largo del tiempo.
-    \item Identificar las necesidades de fondeo externo o propio a lo largo de la vida del proyecto. 
-    \item Proyectar las ventas potenciales y registrar las ventas reales que tenga el proyecto en sus distintas etapas. 
-    \item Identificar las variables externas e internas que impactan en el proyecto y analizar cómo estas variables pueden sensibilizar la evolución y los resultados parciales y totales del mismo. 
-    \item Conocer los impactos económicos directos e indirectos del proyecto en forma cuantitativa.
-\end{itemize}
-
-En conjunto, el análisis económico y financiero permite conocer la viabilidad concreta del proyecto a lo largo de las distintas etapas y su sustentabilidad real en el mediano y largo plazo. 
-
-\section{Costo de capital (CAPEX)}
-
- En esta categoría se engloba todas aquellas compras e inversiones en activos físicos que aumentan la capacidad productiva de la empresa y que pasan a formar parte de su propiedad.
-
-***Al mismo tiempo, también incluye los gastos de mantenimiento destinados a expandir la vida útil de los equipos utilizados. ***
-
-\subsection{Red de transporte cableado}
-
-Realizando una investigación de mercado se cotizaron los equipos activos y materiales elegidos en la Parte IV. Los mismos se muestran en la tabla
-
-\begin{table}[htbp]
-  \centering
-  \resizebox*{\textwidth}{!}{
-    \begin{tabular}{ccccc|c|c|}
-    \hline
-    \multicolumn{1}{|c|}{Red Troncal} & \multicolumn{1}{c|}{Descripción} & \multicolumn{1}{c|}{Modelo} & \multicolumn{1}{c|}{Marca} & Cantidad  & Costo unitario  & Costo total (US\$) \bigstrut\\
-    \hline
-    \multicolumn{1}{|c|}{\multirow{3}[6]{*}{Insumos}} & \multicolumn{1}{p{10.43em}|}{Fibra óptica monomodo 4km/rollo} & \multicolumn{1}{c|}{GLCADSS80-12} & \multicolumn{1}{c|}{GLC} & 16    & 1745  & 27.920 \bigstrut\\
-\cline{2-7}    \multicolumn{1}{|c|}{} & \multicolumn{1}{p{10.43em}|}{Gabinete para exterior Botella de empalme 12/48} & \multicolumn{1}{c|}{F01S200} & \multicolumn{1}{c|}{Fujie} & 16    & 30,3    & 484,8 \bigstrut\\
-\cline{2-7}    \multicolumn{1}{|c|}{} & \multicolumn{1}{p{10.43em}|}{Conectores Pigtail Patchcord} & \multicolumn{1}{c|}{FO-2537} & \multicolumn{1}{c|}{GLC} & 2     & 3,21   & 6,42 \bigstrut\\
-    \hline
-    \multicolumn{1}{|c|}{\multirow{3}[6]{*}{Equipos activos}} & \multicolumn{1}{p{10.43em}|}{Tranceptores Transmisores/Reseptores} & \multicolumn{1}{c|}{SFP-GE-BX80} & \multicolumn{1}{c|}{FS} & 2     & 52    & 104,00 \bigstrut\\
-\cline{2-7}    \multicolumn{1}{|c|}{} & \multicolumn{1}{p{10.43em}|}{Switch 48 puertos RJ-45, 2 puertos SFP, 2 puertos SFP+} & \multicolumn{1}{c|}{ES-48-LITE} & \multicolumn{1}{p{4.715em}|}{Ubiquiti Networks} & 2     & 752   & 1.504,00 \bigstrut\\
-\cline{2-7}    \multicolumn{1}{|c|}{} & \multicolumn{1}{p{10.43em}|}{UPS Rango de voltaje de entrada es de 176V - 294V} & \multicolumn{1}{c|}{BR900G} & \multicolumn{1}{c|}{APC} & 2     & 250   & 500,00 \bigstrut\\
-    \hline
-    \multicolumn{5}{c|}{}                 & TOTAL: & 30.519 \bigstrut\\
-\cline{6-7}    
-\end{tabular}}%
-\caption{Add caption}
-  \label{tab:addlabel}%
-\end{table}%
-
-
-
-\subsection{Red de distribución GPON}.
-
-De la misma forma que en el punto anterior, se elige luego de varias cotizaciones, los materiales para la red de distribución mostrados en la tabla 
-
-\subsection{Costo de instalación}.
-
-
-
-\section{Costo operativos (OPEX)}
-
-En esta sección se consideran los gastos relacionados con la administración de la red y mantenimiento. Los gastos requeridos para el personal técnico, publicidad y alquileres también son tenidos en cuenta. 
-
-\subsection{Costo de servicios}.
-
-Son aquellos gastos requeridos para mantener la red operativa.
-
-\subsubsection{Consumo Electrico}
-
-El consumo eléctrico es la cantidad de energía demandada por un determinado punto de suministro durante un plazo de tiempo denominado período de facturación. Este es facturado en la provincia de San Luis por EDESAL S.A. Utilizando el cuadro tarifario disponible en su pagina web\footnote{\href{https://oficinavirtualedesal.com.ar/ove/html/simulacion.html}{EDESAL}} se puede calcular el costo de energía eléctrica utilizado por la red.
-En la tabla se puede observar el consumo correspondiente en la sea cada componente activo del sistema.
-
-Considerando que los equipos estan activos todo el tiempo, segun el cuadro tarifario, el gasto mensual corresponde a 
-
-\subsubsection{Internet}
-
-Debido al congelamiento de precios realizados por el gobierno nacional, el precio del megabit mayorista era al 31 de enero de 2020 de 447 pesos argentinos
-\footnote{\href{https://www.argentina.gob.ar/noticias/el-gobierno-congela-el-precio-de-internet-mayorista-de-arsat\#:~:text=El\%20vicejefe\%20de\%20Gabinete\%20y,de\%20$447\%20pesos\%20por\%20mega.}{El Gobierno congela el precio de internet mayorista de ARSAT}}.
-Teniendo en cuenta que el precio del megabit se actualiza a partir del índice de precios al consumidor, el precio al mes de junio de 2021 correspondería a 738 pesos argentinos\footnote{\href{https://calculadoradeinflacion.com/argentina.html?md=enero&ad=2020&mh=junio&ah=2021&q=447}{Calculadora de inflación
-histórica de Argentina}}, o US\$4,47 dólares con un dolar a 165 pesos argentinos.
-
-Con este precio se obtiene el monto total en dólares del servicio contratado a ARSAT. 
-Esto se muestra en la ecuación \ref{eq:costo_may_internet}.
-
-\begin{eqnarray}
-    \text{Costo de internet }&=&\text{Megabits necesarios}*\text{Precio del megabit mayorista}\\
-    &=&255\text{ Megabits}*\text{US}\$4,47\approx\text{US}\$1140 \nonumber
-    \label{eq:costo_may_internet}
-\end{eqnarray}
-
-\subsubsection{IPTV}
-
-El gasto correspondiente al servicio de IPTV se estima a partir del costo minorista de un servicio con características similares a las brindadas en este proyecto. De esta forma, el servicio minorista tiene un valor alrededor de los US\$ 15 \footnote{\href{https://compraonline.telecom.com.ar/producto/telecomunicaciones/tv-por-cable}{Telecom}}. Estimando que el costo mayorista es un 30\% del costo minorista:
-
-\begin{equation}
-    \text{Costo mayorista servicio IPTV p/ abonado } = \text{US}\$ 15 * 0,3 = \text{US}\$ 4,5 
-\end{equation}
-
-\subsubsection{VoIP}
-
-Debido a su utilidad en decremento en la actualidad,se considera que la cantidad de clientes que utilizaran el servicio de VoIP es menor al 15\%.
-Considerando que el tráfico por móvil se encuentra alrededor de los 25 mE y la cantidad de clientes que utilizan el servicio es de 13 clientes, se obtiene que el trafico en la hora pico esta dado por la ecuación \ref{eq:bht}
-
-\begin{equation}
-    BHT = \text{Tráfico por móvil} * \text{Clientes} = 0,025 * 13 = 0,325 \text{ Erlang}
-    \label{eq:bht}
-\end{equation}
-
-Para calcular cantidad de canales de voz se consideró que la probabilidad de bloqueo de
-llamadas era del 2\% y en base al resultado obtenido en la Ecuación \ref{eq:bht} se utilizó la calculadora online Erlang B2\footnote{\href{https://www.erlang.com/calculator/erlb/}{Erlang}}. 
-La calculadora Erlang B calcula la cantidad de líneas de voz (n úmero de circuitos en un grupo troncal) necesarias a partir de 2 variables:
-\begin{itemize}
-    \item Tráfico de horas ocupadas (en Erlangs): las horas de tráfico de llamadas durante la hora de mayor actividad de funcionamiento de un sistema telefónico.
-\item Bloqueo: la proporción de llamadas que fallan por líneas insuficientes.
-\end{itemize}
-
-En la figura \ref{fig:erla} se observa como resultado que el curso total de trafico es equivalente a tener 3 canal de voz permanentemente activa. 
-
-\begin{figure}[htbp]
-  \centering
-  \includegraphics[width=0.6\linewidth]{fotos_ema/erlang.png}
-  \caption{Calculo del trafico total.}
-  \label{fig:erla}
-\end{figure}
-
-La cotización brindada por la empresa Dainus\footnote{\href{https://dainus.net/sip}{Dainus}} corresponde a US\$ 7,27 mensuales para el pack SIP Trunk 1, ofreciendo hasta 5 llamadas simultaneas, lo cual cubre los requisitos planteados.   
-
-
-
 \part{Propuesta de la empresa}
 
-Considerando lo analizado en la tabla \ref{tab:comp_tec} de la parte V y el análisis económico previamente explicado se opta por realizar una instalación de fibra óptica tanto para la red troncal como para red de acceso.
-En la elección se tuvo en cuenta el siguiente análisis: 
-
-
-
-
+\part{Análisis económico}
 
 \part{Conclusiones}
 
 \part{Anexos y referencias}
 
--\end{document}
+\section{Cálculo del alcance máximo de la red óptica}
+\label{section:calculo_alc_max_fo}
+Una vez elegidos los equipos con sus respectivas características, para el cálculo del alcance máximo de la red óptica se utiliza la siguiente ecuación \ref{eq:alc_max_ro}. 
+\begin{equation}
+  P \geq D*P_{fo}+E*P_e+C*P_c+S+F
+  \label{eq:alc_max_ro} 
+\end{equation}
+
+donde,
+
+\begin{itemize}
+\item  $P$ representa el saldo de potencia OLT-ONU. Como se desea obtener la máxima distancia posible, se considera $P=P_{TXmaxima}-S_{RXminima}=5-(-28)=33$dBm
+\item  $D$ representa la distancia máxima OLT-ONU, en kilómetros.
+\item  $P_{fo}$ representa la pérdida en la fibra óptica en dB/km.
+\item  $E$ representa la cantidad de empalmes.
+\item  $P_e$ representa las pérdidas por empalme en dB.
+\item  $C$ representa la cantidad de conectores.
+\item  $P_c$ representa las pérdidas por conector en dB.
+\item  $S$ representa las pérdidas por splitter en dB.
+\item  $F$ representa el factor de proyecto que prevé futuras pérdidas o degradaciones de la fibra óptica.
+\end{itemize}
+
+Previo al cálculo de la distancia, es necesario analizar más en detalle cómo se distribuirá la fibra óptica a lo largo de nuestra red. 
+Para ello, se plantea la posibilidad de usar la mayor cantidad de bobinas de 4 km, llevando el splitter lo más cerca del usuario final y usar solamente una bobina de la fibra óptica DROP para llegar desde el splitter hasta la ONU. 
+Esto se decide para evitar empalmes. 
+El conexionado presentará en total 4 conectores, 2 en el tramo OLT-Splitter y 2 en el tramo Splitter-ONU. 
+En la Fig. \ref{fig:esq_dist_max} se muestra un pequeño esquema de la conexión, el cual permitirá calcular la distancia máxima posible entre la OLT y la ONU.
+
+\begin{figure}[htbp]
+  \centering
+  \includegraphics[width=0.8\linewidth]{fotos_ema/esq_dist_max.jpg}
+  \caption{Esquema de conexiones planteado para obtener la distancia máxima.}
+  \label{fig:esq_dist_max}
+\end{figure}
+
+%=========================================================================================
+
+
+Reescribiendo la cantidad de empalmes, ya que estos dependen de la distancia y debido a que no se tienen en cuenta las pérdidas por splitters y el margen de seguridad, la distancia teórica se obtiene con el siguiente planteo:
+\begin{equation}
+  P \geq {(D}_{G652D}+D_{G657A2})*P_{fo}+\left(\frac{D_{G652D}}{L_{B_{G652D}}}+\frac{D_{G657A2}}{L_{B_{G657A2}}}\right)*P_e+C*P_c
+\end{equation}
+ 
+donde
+
+\begin{itemize}
+  \item  $D_{G652D}$ es la distancia que se recorre con la fibra tipo G.652.D.
+  \item  $D_{G657A2}$ es la distancia que se recorre con la fibra tipo G.657.A2.
+  \item  $L_{B_{G652D}}$ es la longitud de la bobina de la fibra tipo G.652.D.
+  \item  $L_{B_{G657A2}}$ es la longitud de la bobina de la fibra tipo G.657.A2.
+  \end{itemize}
+  
+  Considerando lo planteado previamente:
+
+  \begin{eqnarray*}
+    P &\geq& {(D}_{G652D}+1)*P_{fo}+\left(\frac{D_{G652D}}{4}+1\right)*P_e+4P_c \\
+    P &\geq& D_{G652D}P_{fo}+P_{fo}+\frac{D_{G652D}}{4}P_e+P_e+4P_c \\
+    P-P_{fo}-P_e-4P_c &\geq& D_{G652D}\left(P_{fo}+\frac{P_e}{4}\right)  \\
+    \frac{P-P_{fo}-P_e-4P_c}{\left(P_{fo}+\frac{P_e}{4}\right)} &\geq& D_{G652D}
+  \end{eqnarray*}
+  
+  Considerando conectores con pérdidas de 0,2 dB y pérdidas por empalmes de 0,1 dB, se procede a obtener la distancia máxima para el upstream. Con una longitud de onda de 1310 nm, se obtiene que la distancia máxima es:
+
+  \begin{eqnarray*}
+    \frac{33-0.35-0.1-4*0.2}{\left(0.35+\frac{0.1}{4}\right)} &\geq& D_{G652D} \\
+    84.67 &\geq& D_{G652D} \\
+    D&=&D_{G652D}+D_{G657A2}=85.67 \text{ kilómetros}
+  \end{eqnarray*}
+
+  
+  Para el downstream, operando con una longitud de onda de 1490 nm, se obtiene que la distancia máxima es:
+  \begin{eqnarray*}
+    \frac{33-0.25-0.1-4*0.2}{\left(0.25+\frac{0.1}{4}\right)}&\geq& D_{G652D} \\
+    115.8 &\geq& D_{G652D} \\
+    D&=&D_{G652D}+D_{G657A2}=116.8 \text{ kilómetros}
+  \end{eqnarray*}
+
+
+  \section{Cálculo de la relación de división de los splitters a instalar tras cada OLT}
+  \label{section:calc_rel_div_spl}
+
+  Teniendo en cuenta la disponibilidad de splitters que se comercializan, se obtienen splitters con una relación desde 1:2 a 1:128\footnote{\href{https://www.koc.com.ar/productos-redes-de-fibra-optica/splitter-plc-plc-1xn/}{Splitter PLC conectorizado -- KOC Latinoamérica}}. 
+  Para obtener los 101 ONTs calculados, se procede a plantear las posibles combinaciones necesarias para cubrir dicha cantidad. 
+  Teniendo en cuenta que por cada etapa de multiplexación el enlace sufre de mayores pérdidas, además de complejizarse el mantenimiento y la distribución de la red, la multiplexación propuesta presentará 2 etapas. 
+  Para el enlace, se consideraron 2 marcas comercializadas en Argentina, KOC y MACH. 
+  
+  Las características de los splitters KOC no están disponibles al público, por lo cual fueron solicitados por mail, al igual que su precio. 
+  En el caso de la marca MACH se obtuvieron las características pero no información del precio. 
+  A continuación, se muestran las capturas de las hojas de datos provistas por los fabricantes previamente mencionados. 
+
+
+
+  \begin{itemize}
+    \item  MACH electronics, presenta las características mostradas en la Fig. \ref{fig:splitters_mach}.
+
+    \begin{figure}[htbp]
+      \centering
+      \includegraphics[width=0.8\linewidth]{fotos_ema/splitters_mach.jpg}
+      \caption{Características de los splitters MACH\protect\footnote{\href{https://mach.com.ar/backend/views/images/categoria/editado658.pdf}{Catálogo MACH}}.}
+      \label{fig:splitters_mach}
+    \end{figure}
+ 
+    \item  KOC, presenta las características presentadas en la Fig. \ref{fig:splitters_koc}.
+    
+    \begin{figure}[htbp]
+      \centering
+      \includegraphics[width=0.8\linewidth]{fotos_ema/splitters_koc.jpg}
+      \caption{Características de los splitters KOC.}
+      \label{fig:splitters_koc}
+    \end{figure}
+
+    \end{itemize}
+
+\end{document}
