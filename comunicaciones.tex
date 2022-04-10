@@ -9,8 +9,13 @@
 \usepackage{caption}
 \usepackage{hyperref}
 \usepackage{titlesec}
+\usepackage{siunitx}
+\usepackage{booktabs}
+\usepackage{array}
+\newcolumntype{C}[1]{>{\centering\arraybackslash}m{#1}}
 \usepackage{multirow}
 \usepackage{subcaption}
+\usepackage{hhline}
 \usepackage{wrapfig}
 \usepackage{lscape}
 \usepackage{rotating}
@@ -1434,9 +1439,168 @@ Por último, en los cuadrantes 9 y 10 está la zona céntrica, en la cual se ubi
 \part{Comparación de ambas soluciones}
 
 
-\part{Propuesta de la empresa}
+
+\begin{table}[htbp]
+  \resizebox{\textwidth}{!}{
+  \centering
+    \begin{tabular}{|c|C{0.25\textwidth}|C{0.25\textwidth}|C{0.25\textwidth}|C{0.25\textwidth}|}
+\cline{2-5}    \multicolumn{1}{r|}{} & \multicolumn{2}{c|}{Radio Enlace} & \multicolumn{2}{c|}{Fibra óptica} \bigstrut\\
+\cline{2-5}    \multicolumn{1}{r|}{} & Ventajas & Desventajas & Ventajas & Desventajas \bigstrut\\
+\hline
+    \multirow{6}[12]{*}{Troncal} & Equipamiento e instalaciones económicas & La torre resulta intrusiva al paisaje natural & No se necesita infraestructura nueva para el tendido. & Altos costos \bigstrut\\
+\cline{2-5}         & Fácil adquisición de materiales y equipos & Permisos  de construcción y edificación & Facilidad para extender el servicio a otras localidades & Gran cantidad de equipos necesarios para el tendido \bigstrut\\
+\cline{2-5}         & Existe posibilidad de proveer una mayor tasa de transferencia sin necesidad de cambiar el equipo & Si se desea ampliar el servicio a otras zonas, se debe comprar nuevos equipos y colocar nuevas torres & Baja latencia & Se requieren cuidados especiales en el despliegue \bigstrut\\
+\cline{2-5}         & No necesita de un mantenimiento regular & El servicio es afectado por las inclemencias del tiempo & Alta fidelidad, independiente de las inclemencias del tiempo & Alto mantenimiento, debido a posibles cortes en la fibra \bigstrut\\
+\cline{2-5}         & Instalación y puesta en marcha & Necesita de técnicos capacitados en trabajo en altura para su mantenimiento & Posibilidad de partnership con el gobierno de San Luis & Instalación y puesta en marcha \bigstrut\\
+\cline{2-5}         & Debido a la frecuencia utilizada, no es necesario licencias ni pago de comisiones &  &      & Lenta amortización \bigstrut\\
+\hline
+    \multirow{6}[12]{*}{Distribución} & Facilidad de conexión para nuevos usuarios & El servicio es afectado por las inclemencias del tiempo & Robustez ante ataques informáticos & Altos costos de mantenimiento y despliegue \bigstrut\\
+\cline{2-5}         & Baja cantidad de equipos necesarios para brindar el servicio & Posibilidad de phishing & Brindar un servicio no existente, alternativo al competidor principal & Baja flexibilidad a la hora de incorporar nuevos clientes \bigstrut\\
+\cline{2-5}         & Bajo requerimiento de fibra óptica & Complicaciones a la hora de aumentar la cobertura & Altas tasas de transferencia &  \bigstrut\\
+\cline{2-5}         & Bajo mantenimiento & Reducción del ancho de banda en horas pico & Baja latencia &  \bigstrut\\
+\cline{2-5}         &      & Posibilidad de hurto de los equipos & Baja probabilidad de hurto de los equipos &  \bigstrut\\
+\cline{2-5}         &      & Problemas a la hora de establecer el enlace  con las obstrucciones  &      &  \bigstrut\\
+    \hline
+    \end{tabular}}%
+    \caption{Comparación de ambas tecnologías tanto para red de acceso como red de distribución.}
+  \label{tab:comp_tec}%
+\end{table}%
+
+
 
 \part{Análisis económico}
+
+La realización de un análisis económico y financiero es fundamental para poder evaluar distintos aspectos vinculados con el proyecto y su evolución. 
+
+El análisis económico y financiero del proyecto apunta a:
+
+\begin{itemize}
+    \item Conocer en detalle los costos individuales y totales involucrados, tanto en el proceso de desarrollo como en la implementación y gestión del proyecto a lo largo del tiempo.
+    \item Identificar las necesidades de fondeo externo o propio a lo largo de la vida del proyecto. 
+    \item Proyectar las ventas potenciales y registrar las ventas reales que tenga el proyecto en sus distintas etapas. 
+    \item Identificar las variables externas e internas que impactan en el proyecto y analizar cómo estas variables pueden sensibilizar la evolución y los resultados parciales y totales del mismo. 
+    \item Conocer los impactos económicos directos e indirectos del proyecto en forma cuantitativa.
+\end{itemize}
+
+En conjunto, el análisis económico y financiero permite conocer la viabilidad concreta del proyecto a lo largo de las distintas etapas y su sustentabilidad real en el mediano y largo plazo. 
+
+\section{Costo de capital (CAPEX)}
+
+ En esta categoría se engloba todas aquellas compras e inversiones en activos físicos que aumentan la capacidad productiva de la empresa y que pasan a formar parte de su propiedad.
+
+***Al mismo tiempo, también incluye los gastos de mantenimiento destinados a expandir la vida útil de los equipos utilizados. ***
+
+\subsection{Red de transporte cableado}
+
+Realizando una investigación de mercado se cotizaron los equipos activos y materiales elegidos en la Parte IV. Los mismos se muestran en la tabla
+
+\begin{table}[htbp]
+  \centering
+  \resizebox*{\textwidth}{!}{
+    \begin{tabular}{ccccc|c|c|}
+    \hline
+    \multicolumn{1}{|c|}{Red Troncal} & \multicolumn{1}{c|}{Descripción} & \multicolumn{1}{c|}{Modelo} & \multicolumn{1}{c|}{Marca} & Cantidad  & Costo unitario  & Costo total (US\$) \bigstrut\\
+    \hline
+    \multicolumn{1}{|c|}{\multirow{3}[6]{*}{Insumos}} & \multicolumn{1}{p{10.43em}|}{Fibra óptica monomodo 4km/rollo} & \multicolumn{1}{c|}{GLCADSS80-12} & \multicolumn{1}{c|}{GLC} & 16    & 1745  & 27.920 \bigstrut\\
+\cline{2-7}    \multicolumn{1}{|c|}{} & \multicolumn{1}{p{10.43em}|}{Gabinete para exterior Botella de empalme 12/48} & \multicolumn{1}{c|}{F01S200} & \multicolumn{1}{c|}{Fujie} & 16    & 30,3    & 484,8 \bigstrut\\
+\cline{2-7}    \multicolumn{1}{|c|}{} & \multicolumn{1}{p{10.43em}|}{Conectores Pigtail Patchcord} & \multicolumn{1}{c|}{FO-2537} & \multicolumn{1}{c|}{GLC} & 2     & 3,21   & 6,42 \bigstrut\\
+    \hline
+    \multicolumn{1}{|c|}{\multirow{3}[6]{*}{Equipos activos}} & \multicolumn{1}{p{10.43em}|}{Tranceptores Transmisores/Reseptores} & \multicolumn{1}{c|}{SFP-GE-BX80} & \multicolumn{1}{c|}{FS} & 2     & 52    & 104,00 \bigstrut\\
+\cline{2-7}    \multicolumn{1}{|c|}{} & \multicolumn{1}{p{10.43em}|}{Switch 48 puertos RJ-45, 2 puertos SFP, 2 puertos SFP+} & \multicolumn{1}{c|}{ES-48-LITE} & \multicolumn{1}{p{4.715em}|}{Ubiquiti Networks} & 2     & 752   & 1.504,00 \bigstrut\\
+\cline{2-7}    \multicolumn{1}{|c|}{} & \multicolumn{1}{p{10.43em}|}{UPS Rango de voltaje de entrada es de 176V - 294V} & \multicolumn{1}{c|}{BR900G} & \multicolumn{1}{c|}{APC} & 2     & 250   & 500,00 \bigstrut\\
+    \hline
+    \multicolumn{5}{c|}{}                 & TOTAL: & 30.519 \bigstrut\\
+\cline{6-7}    
+\end{tabular}}%
+\caption{Add caption}
+  \label{tab:addlabel}%
+\end{table}%
+
+
+
+\subsection{Red de distribución GPON}.
+
+De la misma forma que en el punto anterior, se elige luego de varias cotizaciones, los materiales para la red de distribución mostrados en la tabla 
+
+\subsection{Costo de instalación}.
+
+
+
+\section{Costo operativos (OPEX)}
+
+En esta sección se consideran los gastos relacionados con la administración de la red y mantenimiento. Los gastos requeridos para el personal técnico, publicidad y alquileres también son tenidos en cuenta. 
+
+\subsection{Costo de servicios}.
+
+Son aquellos gastos requeridos para mantener la red operativa.
+
+\subsubsection{Consumo Electrico}
+
+El consumo eléctrico es la cantidad de energía demandada por un determinado punto de suministro durante un plazo de tiempo denominado período de facturación. Este es facturado en la provincia de San Luis por EDESAL S.A. Utilizando el cuadro tarifario disponible en su pagina web\footnote{\href{https://oficinavirtualedesal.com.ar/ove/html/simulacion.html}{EDESAL}} se puede calcular el costo de energía eléctrica utilizado por la red.
+En la tabla se puede observar el consumo correspondiente en la sea cada componente activo del sistema.
+
+Considerando que los equipos estan activos todo el tiempo, segun el cuadro tarifario, el gasto mensual corresponde a 
+
+\subsubsection{Internet}
+
+Debido al congelamiento de precios realizados por el gobierno nacional, el precio del megabit mayorista era al 31 de enero de 2020 de 447 pesos argentinos
+\footnote{\href{https://www.argentina.gob.ar/noticias/el-gobierno-congela-el-precio-de-internet-mayorista-de-arsat\#:~:text=El\%20vicejefe\%20de\%20Gabinete\%20y,de\%20$447\%20pesos\%20por\%20mega.}{El Gobierno congela el precio de internet mayorista de ARSAT}}.
+Teniendo en cuenta que el precio del megabit se actualiza a partir del índice de precios al consumidor, el precio al mes de junio de 2021 correspondería a 738 pesos argentinos\footnote{\href{https://calculadoradeinflacion.com/argentina.html?md=enero&ad=2020&mh=junio&ah=2021&q=447}{Calculadora de inflación
+histórica de Argentina}}, o US\$4,47 dólares con un dolar a 165 pesos argentinos.
+
+Con este precio se obtiene el monto total en dólares del servicio contratado a ARSAT. 
+Esto se muestra en la ecuación \ref{eq:costo_may_internet}.
+
+\begin{eqnarray}
+    \text{Costo de internet }&=&\text{Megabits necesarios}*\text{Precio del megabit mayorista}\\
+    &=&255\text{ Megabits}*\text{US}\$4,47\approx\text{US}\$1140 \nonumber
+    \label{eq:costo_may_internet}
+\end{eqnarray}
+
+\subsubsection{IPTV}
+
+El gasto correspondiente al servicio de IPTV se estima a partir del costo minorista de un servicio con características similares a las brindadas en este proyecto. De esta forma, el servicio minorista tiene un valor alrededor de los US\$ 15 \footnote{\href{https://compraonline.telecom.com.ar/producto/telecomunicaciones/tv-por-cable}{Telecom}}. Estimando que el costo mayorista es un 30\% del costo minorista:
+
+\begin{equation}
+    \text{Costo mayorista servicio IPTV p/ abonado } = \text{US}\$ 15 * 0,3 = \text{US}\$ 4,5 
+\end{equation}
+
+\subsubsection{VoIP}
+
+Debido a su utilidad en decremento en la actualidad,se considera que la cantidad de clientes que utilizaran el servicio de VoIP es menor al 15\%.
+Considerando que el tráfico por móvil se encuentra alrededor de los 25 mE y la cantidad de clientes que utilizan el servicio es de 13 clientes, se obtiene que el trafico en la hora pico esta dado por la ecuación \ref{eq:bht}
+
+\begin{equation}
+    BHT = \text{Tráfico por móvil} * \text{Clientes} = 0,025 * 13 = 0,325 \text{ Erlang}
+    \label{eq:bht}
+\end{equation}
+
+Para calcular cantidad de canales de voz se consideró que la probabilidad de bloqueo de
+llamadas era del 2\% y en base al resultado obtenido en la Ecuación \ref{eq:bht} se utilizó la calculadora online Erlang B2\footnote{\href{https://www.erlang.com/calculator/erlb/}{Erlang}}. 
+La calculadora Erlang B calcula la cantidad de líneas de voz (n úmero de circuitos en un grupo troncal) necesarias a partir de 2 variables:
+\begin{itemize}
+    \item Tráfico de horas ocupadas (en Erlangs): las horas de tráfico de llamadas durante la hora de mayor actividad de funcionamiento de un sistema telefónico.
+\item Bloqueo: la proporción de llamadas que fallan por líneas insuficientes.
+\end{itemize}
+
+En la figura \ref{fig:erla} se observa como resultado que el curso total de trafico es equivalente a tener 3 canal de voz permanentemente activa. 
+
+\begin{figure}[htbp]
+  \centering
+  \includegraphics[width=0.6\linewidth]{fotos_julian/erlang}
+  \caption{Calculo del trafico total.}
+  \label{fig:erla}
+\end{figure}
+
+La cotización brindada por la empresa Dainus\footnote{\href{https://dainus.net/sip}{Dainus}} corresponde a US\$ 7,27 mensuales para el pack SIP Trunk 1, ofreciendo hasta 5 llamadas simultaneas, lo cual cubre los requisitos planteados.   
+
+
+
+\part{Propuesta de la empresa}
+
+Considerando lo analizado en la tabla \ref{tab:comp_tec} de la parte V y el análisis económico previamente explicado se opta por realizar una instalación de fibra óptica tanto para la red troncal como para red de acceso.
+En la elección se tuvo en cuenta el siguiente análisis: 
+
 
 \part{Conclusiones}
 
